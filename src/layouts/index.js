@@ -18,9 +18,10 @@ class Template extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(1),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            textAlign: 'center',
           }}
         >
           <Link
