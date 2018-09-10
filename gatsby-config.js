@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Michael Thiessen\'s Blog',
+    author: 'Michael Thiessen',
+    description: 'A blog about all things VueJS',
+    siteUrl: 'http://michaelnthiessen.com',
   },
-  pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
