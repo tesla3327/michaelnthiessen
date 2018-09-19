@@ -1,6 +1,9 @@
 ---
 title: "React vs Vue: Which is growing faster?"
+date: 2018-09-19
 ---
+
+TK need intro yet
 
 ## Hacker news trends
 Hacker News may not be a representative sample of the broader software development community, but for our purposes it's a fairly good proxy.
