@@ -3,7 +3,31 @@ title: "React vs Vue: Which is growing faster?"
 date: 2018-10-19
 ---
 
-TK need intro yet
+It's the age old -- or maybe year old -- question.
+
+**Which is better, React or Vue?**
+
+A large part of the Javascript community has become obsessed over this. Each person picks their side, and like sports fans we cheer on our team to "victory".
+
+![](https://media.giphy.com/media/3oEjHY2dCdoXcTsHDi/giphy.gif?cid=3640f6095bae5a695331536759327b69)
+
+Although it's good to discuss the differences between the frameworks, to compare the finer details of which is more performant, easier to pick up, or more productive (whatever that means), many of these comparisons are nothing more than speculation based on a few weeks of experience.
+
+**We need cold, hard, data.**
+
+We need to look at the numbers to see not what people think, but what people are doing.
+
+## The Data
+I've looked at several different metrics here, but **take these numbers with a grain of salt**.
+
+Each of these metrics has their flaws, some of them providing more of a signal than others. The hope is that in aggregate, these metrics will provide at least *some* insight, and that we may better **understand how React and Vue are growing in relation to one another**, and what exactly that might mean.
+
+The metrics we'll be looking at are:
+- Hacker News popularity
+- NPM downloads
+- Github stars
+- Google Trends
+- Reddit subscribers
 
 ## Hacker news trends
 Hacker News may not be a representative sample of the broader software development community, but for our purposes it's a fairly good proxy.
