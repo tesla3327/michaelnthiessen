@@ -1,6 +1,6 @@
 ---
 title: "React vs Vue: Which is growing faster?"
-date: 2018-09-19
+date: 2018-10-19
 ---
 
 TK need intro yet
@@ -280,7 +280,9 @@ I could speculate about why this is:
 
 ## It's not a contest
 
-As a community we need to stop caring about which framework "wins". It's a childish game and no one is better off for it.
+As a community we need to stop caring about which framework "wins". It's a childish game and no one is better off for it (but everyone wins in a dog surfing contest).
+
+![](https://media.giphy.com/media/qAbtO6dgm5bi0/giphy.gif)
 
 Competing ideas are great, because it accelerates innovation and brings us better tools to do our jobs.
 
