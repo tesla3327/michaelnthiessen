@@ -1,6 +1,6 @@
 ---
 title: "React vs Vue: Which is growing faster?"
-date: 2018-10-19
+date: 2018-10-04
 ---
 
 It's the age old -- or maybe year old -- question.
