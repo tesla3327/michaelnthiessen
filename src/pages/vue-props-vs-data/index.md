@@ -2,20 +2,20 @@
 title: Props vs Data in Vue
 date: 2018-10-30
 ---
-Vue comes with two different ways of storing variables, `props` and `data`.
+Vue comes with two different ways of storing variables, **props** and **data**.
 
 These can be confusing at first, since they seem like they do similar things, and it's not clear when to use one vs the other.
 
-So what's the difference between `props` and `data`?
+So what's the difference between props and data?
 
-**`Data` is the private memory of each component where you can store any variables you need to keep track of and update. Props are how you pass this data from a parent component down to a child component, and cannot be changed.**
+**`Data` is the private memory of each component where you can store any variables you need. Props are how you pass this data from a parent component down to a child component.**
 
 In this article you'll learn:
-- What props are, and why **this data only flows down** in Vue
+- What props are, and why **this data only flows down**, not up
 - What the `data` option is used for
 - What **reactivity** is
-- How to avoid **naming collisions** between `props` and `data`
-- How to use **props and data together** for fun and profit
+- How to avoid **naming collisions** between props and `data`
+- How to use **props and data together** for fun and profit 💰
 
 ## What are props?
 In Vue, [props](https://vuejs.org/v2/guide/components-props.html) (or properties), are the way that we pass data from a parent component down to it's child components.
@@ -37,7 +37,11 @@ In Vue we add props to components in the `<template>` section of our code:
 
 In this example, we are passing the prop `cool-prop` a value of `"hello world"`. We will be able to access this value from inside of `my-component`.
 
-However, when we access props from inside of a component, we don't own them, **so we can't change them**. But if we can't change variables, we're kind of stuck.
+However, when we access props from inside of a component, we don't own them, **so we can't change them** (just like you can't change the genes your parents gave you).
+
+> Note: While it's possible to change properties in a component, it's a really bad idea. You end up changing the value that the parent is using as well, which can cause lots of confusion.
+
+But if we can't change variables, we're kind of stuck.
 
 This is where `data` comes in!
 
@@ -76,6 +80,8 @@ export default {
 
 This data is private, and **only for the component itself** to use. Other components do not have access to it.
 
+> Note: Again, it is possible for other components to access this data, but for the same reasons, it's a really bad idea to do this!
+
 If you need to pass data to a component, you can use props to pass data down the tree (to child components), or events to pass data up the tree (to parent components).
 
 ## Props and data are both reactive
@@ -83,7 +89,7 @@ With Vue you don't need to think all that much about when the component will upd
 
 **This is because Vue is reactive.**
 
-Instead of calling `setState` every time you want to change something, you just change the thing! As long as you're updating something that is either a `prop` or inside of `data`, Vue knows to watch for when it changes.
+Instead of calling `setState` every time you want to change something, you just change the thing! As long as you're updating a **reactive property** (props, computed props, and anything in `data`), Vue knows to watch for when it changes.
 
 Going back to our counter app, let's take a closer look at our methods:
 ```js
@@ -99,10 +105,10 @@ methods: {
 
 All we have to do is update `count`, and Vue detects this change. It then re-renders our app with the new value!
 
-There are [some more things to learn](https://vuejs.org/v2/guide/reactivity.html) about Vue's reactivity system if you want to dive deeper.
+Vue's reactivity system has a lot more nuance to it, and I believe it's really important to understand it well if you want to be highly productive with Vue. Here are [some more things to learn](https://vuejs.org/v2/guide/reactivity.html) about Vue's reactivity system if you want to dive deeper.
 
 ## Avoiding naming collisions
-There is another great thing that Vue does that makes developing just a little bit nicer.
+There is another great thing that Vue does that makes developing *just a little bit nicer*.
 
 Let's define some props and data on a component:
 ```js
@@ -117,7 +123,9 @@ export default {
 };
 ```
 
-If we wanted to access them inside of a method, we don't have to do `this.props.propA` or `this.data.dataA`. Vue let's us omit `props` and `data` completely, leaving us with cleaner code:
+If we wanted to access them inside of a method, we don't have to do `this.props.propA` or `this.data.dataA`. Vue let's us omit `props` and `data` completely, leaving us with cleaner code.
+
+We can access them using `this.propA` or `this.dataA`:
 ```js
 methods: {
   coolMethod() {
@@ -135,23 +143,25 @@ Because of this, if we accidentally use the same name in both our `props` and ou
 Vue will give you a warning if this happens, because it doesn't know which one you wanted to access!
 ```js
 export default {
-  props: ['password'],
+  props: ['secret'],
   data() {
     return {
-      password: '1234',
+      secret: '1234',
     };
   },
   methods: {
-    coolMethod() {
-      // The prop or the data?
-      console.log(this.password);
+    printSecret() {
+      // Which one do we want?
+      console.log(this.secret);
     }
   }
 };
 ```
 
+The real magic of using Vue happens when you start using props and `data` together.
+
 ## Using props and data together
-Now that we've seen how props and data are different, let's see why we need both of them, by building a basic app.
+Now that we've seen how props and data are different, let's see why **we need both of them**, by building a basic app.
 
 Let's say we are building a social network and we're working on the profile page. We've built out a few things already, but now we have to add the contact info of the user.
 
@@ -174,6 +184,8 @@ export default {
   props: ['emailAddress', 'twitterHandle', 'instagram'],
 };
 ```
+
+The `ContactInfo` component takes the props `emailAddress`, `twitterHandle`, and `instagram`, and displays them on the page.
 
 Our profile page component, `ProfilePage`, looks like this:
 ```html
@@ -205,7 +217,7 @@ export default {
 };
 ```
 
-Our `ProfilePage` component has the user object, but `ContactInfo` has no data.
+Our `ProfilePage` component currently displays the users profile picture along with their name. It also has the user data object.
 
 How do we get that data from the parent component (`ProfilePage`) down into our child component (`ContactInfo`)?
 
