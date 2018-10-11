@@ -1,6 +1,6 @@
 ---
 title: Props vs Data in Vue
-date: 2018-10-30
+date: 2018-10-11
 ---
 Vue comes with two different ways of storing variables, **props** and **data**.
 
