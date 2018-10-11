@@ -277,4 +277,6 @@ The reason we keep the data in `ProfilePage` and not `ContactInfo` is that other
 
 Since **data only flows down**, this means we have to put our data high enough in the component tree so that it can flow down to all of the places it needs to go.
 
+_If you enjoyed this article or have any comments, let me know by replying to [this tweet](https://twitter.com/MichaelThiessen/status/1050425430963052546)!_
+
 
