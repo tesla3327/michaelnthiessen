@@ -3,6 +3,10 @@ title: Computed props and watchers — what's the difference?
 date: 2018-10-30
 ---
 
+But first, a gif of a puppy burrito:
+
+![](https://media.giphy.com/media/FOL5mK0tXUmXe/giphy.gif)
+
 ## What is a watcher?
 When building components in Vue, we often need to respond to changes in our props.
 
@@ -26,12 +30,6 @@ You can put a watcher on any reactive property. This includes **computed props**
 They're really useful for **creating side effects** -- things that don't update your application's state immediately.
 
 If you need to fetch data or do some other **ansychronous action**, watched props are really good for that. Or maybe you need to interact with an imperative browser API, such as `localstorage`. Because watchers aren't expected to be pure functions, we can do all sorts of things like this with them!
-
-<!-- - does not create a new property
-- can only react to changes in a single prop
-- can be asynchronous, have side effects, does not return anything
-- can do the same things that a computed property can do, but not nearly as nice and less declaratively
-- you can watch anything that is reactive -->
 
 Watched props are really powerful, but many times we use a watcher when all we needed was a computed property.
 
@@ -83,50 +81,10 @@ Once we've created our computed prop, we can access it like we would any other p
 
 Now that we've covered how to use watchers and computed props, **where do we use them?**
 
-<!-- - more declarative than watch
-- "compose new data derived from other data"
-- should be pure: return a value, synchronous, no side-effects
-- creates a new reactive property
-- can react to changes in multiple props (including other computed props)
-- you can react to changes in a computed prop -->
-
 ## Common use cases for a watcher
 The most common use case for a watched prop is in **creating side effects.**
 
-
-- side effects
-- update state that can't be a computed prop
-
-## Examples of using a watched property
-
-## Common use cases for computed props
-- easier access to nested data
-- "inject" variables into the `<template>`
-- value/prop that depends on one or more props
-
-## Examples of using a computed property
-
-
-## Main differences
-- more declarative than watch
-- "compose new data derived from other data"
-- should be pure: return a value, synchronous, no side-effects
-- creates a new reactive property
-- can react to changes in multiple props (including other computed props)
-- you can react to changes in a computed prop
-
-## How to decide which to use
-- most of the time you can replace an instance of watch with computed prop
-- try to use a computed prop, if it doesn't work, use a watcher
-- computed props are generally better since they are cached
-
-The watchers can often be confused with `computed` properties, because they operate in a similar way. It's even trickier to know when to use which one.
-
-But I've come up with a good rule of thumb.
-
-**Watch is for side effects. If you need to change state you want to use a computed prop instead.**
-
-A **side effect** is anything that doesn't effect your state. **State** is anything inside of `data` or a computed prop.
+A **side effect** is anything that affects state outside of the component, or affects state in an asynchronous way.
 
 Common examples are:
 - Fetching data
@@ -135,19 +93,97 @@ Common examples are:
 
 None of these things affect your component directly, so they are considered to be *side effects*.
 
-If you aren't doing something like this, you'll probably want to use a computed prop. Computed props are really good for when you need to **update a calculation in response to something else changing**.
+Here's a great example of fetching data.
 
-However, *there are* cases where you might want to use a watcher to update something in your `data`. 
+Let's say we have a `MovieData` component, and it fetches data from the server based on what the `movie` prop is set to:
+```js
+export default {
+  name: 'MovieData',
+  props: {
+    movie: {
+      type: String,
+      required: true,
+    }
+  },
+  data() {
+    return {
+      movieData: {},
+    }
+  },
+  
+  watch: {
+    // Whenever the movie prop changes, fetch new data
+    movie(movie) {
+      // Fetch data about the movie
+      fetch(`/${movie}`).then((data) => {
+        this.movieData = data;
+      });
+    }
+  }
+}
+```
 
-Sometimes it just doesn't make sense to make something a computed prop. If you have to update it from your `<template>` or from a method, it needs to go inside of your `data`. But then if you need to update it in response to a property changing, you *need* to use the watcher.
+Now, this component will work wonderfully. Whenever we change the `movie` prop, our watcher will fire, and it will fetch us the new data.
 
-![](https://media.giphy.com/media/Bc3SkXz1M9mjS/giphy.gif)
+You can also use watchers to recompute data in certain cirumstances. While computed props are generally the better way of doing this (as we'll see in a moment), there are cases where it doesn't make sense to use a computed prop.
 
 **NOTE**: Be careful with using a `watch` to update state. This means that both your component and the parent component are updating -- directly or indirectly -- the same state. **This can get very ugly very fast.**
 
-## Common hangups with watched props
-- watching nested data
+## Common Use Cases for Computed Props
+The main use case for computed props, as discussed before, is in composing data from other data.
 
-## Common hangups with computed props
-- computed props are lazily evaluated (only executed when you use them)
-- computed props are cached, which also can give a performance boost
+This use case is pretty straightforward, but extremely useful. In my Vue code I use computed props far more than I use watchers, and almost always they are used to compose new data together.
+
+I'll say this again because it's so important.
+
+**Using computed props to compose new data is one of the most useful patterns to learn when building Vue applications**.
+
+I use them literally everywhere.
+
+![](https://media.giphy.com/media/PXK4tsIhcISVq/giphy.gif)
+
+Another one is allowing us **easier access to nested data**.
+
+If we had some deeply nested data in our component that we needed access to, like `data.nested.really.deeply.importantValue`, we can simplify this a whole lot:
+```js
+computed() {
+  importantValue() {
+    return this.data.nested.really.deeply.importantValue;
+  },
+}
+```
+
+And now we only need to write `this.importantValue` to get ahold of it!
+
+## Differences and Similarities
+Let's see how they are different:
+- Computed props are **more declarative** than watched properties
+- Computed props should be **pure**: return a value, synchronous, and have no side-effects
+- Computed props create new **reactive properties**, watched props only call functions
+- Computed props can react to changes in **multiple props**, whereas watched props can only watch one at a time
+- Computed props are **cached**, so they only recalculate when things change. Watched props are executed every time
+- Computed props are **evaluated lazily**, meaning they are only executed when they are needed to be used. Watched props are executed whenever a prop changes
+
+But they also have some similarities.
+
+![](https://media.giphy.com/media/wV2G52WIBTOaQ/giphy.gif)
+
+They aren't exactly twins, but they both:
+- **react to changes** in properties
+- can be used to **compute new data**
+
+But how do you know **which one to use** in a given situation?
+
+## Which one do you use?
+Watched properties can often be confused with computed properties, because they operate in a similar way. 
+
+It's even trickier to know when to use which one.
+
+![](https://media.giphy.com/media/qPuhFBQt8xLEY/giphy.gif)
+
+But I've come up with a good rule of thumb.
+
+**Watch is for side effects. If you need to change state you want to use a computed prop instead.**
+
+Most of the time you'll want a computed prop, so *try to use that first*. If it doesn't work, or results in something weird, then you should switch to using a watched prop.
+
