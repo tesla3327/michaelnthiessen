@@ -255,6 +255,8 @@ methods: {
 
 This makes things a little cleaner if we are watching multiple props to do the same side-effect.
 
+*If you enjoyed this article or have any comments, let me know by replying to [this tweet](https://twitter.com/MichaelThiessen/status/1052952314699485184)!*
+
 
 
 
