@@ -15,7 +15,7 @@ In CSS it's pretty easy to change things on `hover`. We just use the `:hover` [p
 }
 ```
 
-In Vue it gets a littler tricker, because we don't have this functionality built in.
+In Vue it gets a [little](https://forum.vuejs.org/t/displaying-some-elements-on-hover/26974) [trickier](https://stackoverflow.com/questions/30911933/mouseover-or-hover-vue-js), because we don't have this functionality built in.
 
 We have to implement most of this ourselves.
 
@@ -35,7 +35,11 @@ To keep track of when the mouse leaves, we'll use the [mouseleave event](https:/
 
 Detecting when the mouse enters can be done with the corresponding [mouseenter event](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter), but we won't be using that one.
 
-The reason is that there can be significant performance problems when using `mouseenter` on deep DOM trees. And Vue apps can have pretty deep trees. This is because `mouseenter` fires a unique event to the entered element, as well as every single ancestor element.
+The reason is that there can be significant performance problems when using `mouseenter` on deep DOM trees. This is because `mouseenter` fires a unique event to the entered element, as well as every single ancestor element.
+
+What will we be using instead, you ask?
+
+![](https://media.giphy.com/media/NFcyDseB3m9uU/giphy.gif)
 
 Instead, we will use the [mouseover event](https://developer.mozilla.org/en-US/docs/Web/Events/mouseover).
 
