@@ -1,12 +1,12 @@
 ---
-title: Stuff
-date: 2018-10-30
+title: "Warn: Property or Method is Not Defined"
+date: 2018-11-01
 ---
 Chances are if you've been developing with Vue for any amount of time, you've gotten this error:
 
 ![](error.png)
 
-**Most of the time this error is caused because you misspelled a variable name somewhere.**
+**Most of the time this error is because you misspelled a variable name somewhere.**
 
 But there are other causes as well.
 
@@ -20,7 +20,7 @@ This gist of the error is this.
 
 **Vue is trying to render your component, and your component wants to use the property `prop`, but Vue can't find `prop` anywhere.**
 
-You don't need to worry about the reactive properties part. As long as you define things in `data` you'll be okay (but it is good to understand how reactivity works).
+You don't need to worry about the reactive properties part of the error for now. As long as you define things in `data` you'll be okay (but it is good to understand how reactivity works).
 
 So, let's take a look at the 2 main problems that can cause this warning!
 
@@ -144,7 +144,7 @@ const LinkItem = {
   props: ['url', 'text'],
 + methods: {
 +   forceHTTPS(url) {
-+     // Do some stuff... 
++     // Do some stuff...
 +   }
 + },
   template: `
