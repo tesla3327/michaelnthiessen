@@ -1,6 +1,7 @@
 ---
 title: Props vs Data in Vue
 date: 2018-10-11
+description: Vue comes with two different ways of storing variables, props and data. These can be confusing at first, since they seem like they do similar things, and it's not clear when to use one vs the other. So what's the difference between props and data?
 ---
 Vue comes with two different ways of storing variables, **props** and **data**.
 

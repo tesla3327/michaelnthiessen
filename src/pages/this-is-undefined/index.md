@@ -1,6 +1,7 @@
 ---
 title: How to fix this is undefined in Vue
 date: 2018-09-10
+description: "Your VueJS app doesn't work, and you get an error that says: this is undefined. Don't worry, you're not alone &mdash; I've run into this issue countless times, but I eventually figured out how to avoid it."
 ---
 
 You're happily coding along, loving how awesome Vue is, when it strikes.

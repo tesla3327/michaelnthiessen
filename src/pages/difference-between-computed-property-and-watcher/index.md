@@ -1,6 +1,7 @@
 ---
 title: Computed Props and Watchers — What's the Difference?
 date: 2018-10-25
+description: "Computed properties and watchers are two of the most fundamental concepts in Vue. In this article you'll learn: what a watcher is and what a computed prop is, common use cases for both, the differences and similarities between them, and how to know which one to use."
 ---
 
 Computed properties and watchers are two of the most fundamental concepts in Vue.

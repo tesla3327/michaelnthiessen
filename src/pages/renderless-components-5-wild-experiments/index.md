@@ -1,6 +1,7 @@
 ---
 title: "Renderless Components: 5 Wild Experiments"
 date: 2018-09-28
+description: I've been spending the last several weeks experimenting with the different things that we can do with renderless components. I've been pushing the limits pretty far, going past the edges of what Vue is intended to do. Along the way I've discovered a few neat things that I'd like to share with you!
 ---
 I think that **renderless components have huge potential to transform the way we write components**, but we're still in the early stages of figuring out what that will look like.
 

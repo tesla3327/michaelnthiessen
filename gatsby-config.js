@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Michael Thiessen\'s Blog',
+    title: 'Michael Thiessen',
     author: 'Michael Thiessen',
     description: 'A blog about all things VueJS',
     siteUrl: 'http://michaelnthiessen.com',

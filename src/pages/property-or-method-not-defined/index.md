@@ -1,6 +1,7 @@
 ---
 title: "Warn: Property or Method is Not Defined"
 date: 2018-11-01
+description: "Chances are if you've been developing with Vue for any amount of time, you've gotten this error: Property or method prop is not defined. Most of the time this error is because you misspelled a variable name somewhere. But there are other causes as well."
 ---
 Chances are if you've been developing with Vue for any amount of time, you've gotten this error:
 
