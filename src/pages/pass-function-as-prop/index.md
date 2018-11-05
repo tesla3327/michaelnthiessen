@@ -90,9 +90,165 @@ export default {
 
 There is a lot more that can be done with events, and this only scratches the surface. I would highly recommend that you check out the [official Vue docs](https://vuejs.org/v2/guide/events.html) to learn more about events. Definitely worth the read!
 
-But events don't solve _all_ of our problems.
+But events don't quite solve _all_ of our problems.
 
 ## Accessing a parent's scope from the child component
+In many cases the problem you are trying to solve is accessing values from different scopes.
+
+The parent component has one scope, and the child component another. Often you want to access a value in the child component from the parent, or access a value in the parent component from the child.
+
+Normally Vue prevents us from doing this directly, which is a good thing.
+
+It keeps our components more encapsulated and promotes their reusability. This makes your code cleaner and prevents lots of headaches in the long run.
+
+You may be tempted to try and pass functions as props to get around this.
+
+### Getting a value from the parent
+If you want a child component to access a parent's method, it seems obvious to just pass the method straight down as a prop.
+
+Then the child has access to it immediately, and can use it directly.
+
+In the parent component we would do this:
+```html
+<!-- Parent -->
+<template>
+  <ChildComponent :method="parentMethod" />
+</template>
+```
+```js
+// Parent
+export default {
+  methods: {
+    parentMethod() {
+      // ...
+    }
+  }
+}
+```
+
+And in our child component we would use that method:
+```js
+// Child
+export default {
+  props: {
+    method: { type: Function },
+  },
+  mounted() {
+    // Use the parent function directly here
+    this.method();
+  }
+}
+```
+
+What's wrong with that?
+
+It's not exactly wrong, but it's much better to use events in this case.
+
+Instead of the child component calling the function when it needs to, it will simply emit an event. Then the parent will receive that event, call the function, and then the props that are passed down to the child component will be updated.
+
+This is a much better way of achieving the same effect.
+
+We can illustrate this using a more concrete example:
+
+TK more creative example here
+
+### Getting a value from the child
+In other cases we may want to get a value from the child into the parent, and we're using functions for that.
+
+For example, you might be doing this. The parent's function accepts the value from the child and does something with it:
+
+TK better examples
+
+```html
+<!-- Parent -->
+<template>
+  <ChildComponent :method="parentMethod" />
+</template>
+```
+```js
+// Parent
+export default {
+  methods: {
+    parentMethod(valueFromChild) {
+      // Do something with the value
+      console.log('From the child:', valueFromChild);
+    }
+  }
+}
+```
+
+Where in the child component you pass the value in when calling it:
+```js
+// Child
+export default {
+  props: {
+    method: { type: Function },
+  },
+  data() {
+    return { value: 'I am the child.' };
+  },
+  mounted() {
+    // Pass a value to the parent through the function
+    this.method(this.value);
+  }
+}
+```
+
+Again, this isn't completely _wrong_.
+
+It will work to do things this way.
+
+It's just that it isn't the best way of doing things in Vue. Instead, events are much better suited to solving this problem.
+
+We can achieve this exact same thing using events instead:
+```html
+<!-- Parent -->
+<template>
+  <ChildComponent @send-message="handleSendMessage" />
+</template>
+```
+```js
+// Parent
+export default {
+  methods: {
+    handleSendMessage(event, value) {
+      // Our event handler gets the event, as well as any
+      // arguments the child passes to the event
+      console.log('From the child:', value);
+    }
+  }
+}
+```
+
+And in the child component we emit the event:
+```js
+// Child
+export default {
+  props: {
+    method: { type: Function },
+  },
+  data() {
+    return { value: 'I am the child.' };
+  },
+  mounted() {
+    // Instead of calling the method we emit an event
+    this.$emit('send-message', this.value);
+  }
+}
+```
+
+Events are extremely useful in Vue, but they don't solve 100% of our problems either.
+
+There are times when we need to access a child's scope from the parent in a different way.
+
+For that, we have scoped slots!
+
+## Using scoped slots instead
+
 Scoped slots are a more advanced topic, but they are also incredibly useful.
 
 In fact, I would consider them to be one of the most powerful features that Vue offers.
+
+They let you blur the lines between what is in the child's scope and what is in the parent's scope. But it's done in a very clean way that leaves your components as composable as ever.
+
+If you want to learn more about how scoped slots work -- and I really think that you should -- check out [Adam Wathan's great post](https://adamwathan.me/the-trick-to-understanding-scoped-slots-in-vuejs/) on the subject.
