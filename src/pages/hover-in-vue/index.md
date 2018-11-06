@@ -1,6 +1,7 @@
 ---
-title: stuff
+title: How to Implement a Mouseover or Hover in Vue
 date: 2018-10-30
+description: "In CSS it's pretty easy to change things on 'hover'. In Vue it gets a little trickier. In this short article you'll learn -- How to implement a hover effect in Vue, how to show an element on mouseover, and how to dynamically update classes with a mouseover."
 ---
 
 In CSS it's pretty easy to change things on `hover`. We just use the `:hover` [psuedo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover):
