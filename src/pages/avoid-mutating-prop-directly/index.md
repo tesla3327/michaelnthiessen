@@ -1,13 +1,15 @@
 ---
-title: How to Avoid Mutating a Prop Directly
+title: "Vue Error: Avoid Mutating a Prop Directly"
 date: 2018-11-30
 description:
 ---
 
 Intro
 
+![](error.png)
+
 ## Mutating props in Vue is an anti-pattern
-screenshot of error
+
 
 https://vuejs.org/v2/guide/migration.html#Prop-Mutation-deprecated
 - Whenever a component re-renders the mutations will be overwritten
