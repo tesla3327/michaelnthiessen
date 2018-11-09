@@ -22,6 +22,13 @@ Error message: Avoid mutating a prop directly since the value will be overwritte
 
 Example: Passing a list to child component, computed prop used to display list. Button on child reverses list. Demonstrates you can transform or pass-through in a computed prop.
 
+## Trying to communicate with parents
+- props flow down
+- events flow up
+- communicating with parent should be done with events
+
+Short example of using events (can be taken from another post probably)
+
 ## Getting tripped up by v-model
 https://stackoverflow.com/questions/42614242/avoid-mutating-a-prop-directly-in-vuejs-2
 
@@ -30,10 +37,3 @@ https://stackoverflow.com/questions/42614242/avoid-mutating-a-prop-directly-in-v
 Short example showing how this works under the hood
 
 Example of how to fix this problem
-
-## Trying to communicate with parents
-- props flow down
-- events flow up
-- communicating with parent should be done with events
-
-Short example of using events (can be taken from another post probably)
