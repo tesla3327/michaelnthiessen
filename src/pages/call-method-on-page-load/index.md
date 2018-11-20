@@ -1,7 +1,7 @@
 ---
 title: How to Call a Vue Method on Page Load
-date: 2018-11-30
-description: cool
+date: 2018-11-20
+description: You'll want to use the 'mounted' lifecycle hook so that you can run code as soon as your component is mounted to the DOM. From this lifecycle hook you can fetch data, manipulate the DOM, or do anything else you might need in order to initialize your component.
 ---
 
 As soon as the page loads, you want a certain function to be called.
@@ -17,7 +17,9 @@ This article will explain a few things:
 - How to use lifecycle hooks
 - Why you should prefer using the `mounted` hook over the `created` hook
 
-In order to call a function as soon as our Vue component has loaded, we'll need to get familiar with Vue's lifecycle hooks.
+In order to call a function as soon as our Vue component has loaded, we'll first need to get familiar with Vue's lifecycle hooks.
+
+![Dog skating GIF](https://media.giphy.com/media/eeUJaTwsHh3tswkaYm/giphy.gif)
 
 ## Lifecycle Hooks
 All Vue components have a series of stages -- or _lifecycles_ -- that they go through.
@@ -45,9 +47,9 @@ Lastly, when the component is no longer needed, it is _destroyed_.
 
 Any event listeners are cleaned up, DOM nodes are removed from the page, and any memory it was using is now released.
 
-**That's not all.**
+That's not all.
 
-Vue let's us hook into these lifecycles. This lets us run code when the component is _created_, _mounted_, _updated_, or _destroyed_!
+**Vue let's us hook into these lifecycles.** This lets us run code when the component is _created_, _mounted_, _updated_, or _destroyed_!
 
 > There is so much more to talk about when it comes to lifecycle methods. I would suggest you check out [the docs](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) as well as [this awesome article](https://alligator.io/vuejs/component-lifecycle/) about them to learn even more.
 
@@ -74,7 +76,7 @@ export default {
 };
 ```
 
-But we're here to figure out how to call a function as soon as our page loads.
+But we're here to figure out **how to call a function as soon as our page loads.**
 
 Both `created` and `mounted` hooks seem like they would work.
 
@@ -87,7 +89,7 @@ In fact, I always use this one. I only switch to a different hook if for some re
 
 The reason is this.
 
-In the `mounted` hook, everything about the component has been initialized properly.
+**In the `mounted` hook, everything about the component has been initialized properly.**
 
 Props have been initialized, reactive `data` is going, computed props have been setup, and so have your watchers.
 
@@ -104,7 +106,7 @@ And in the `created` hook, nearly everything in the component has been setup. Th
 
 So what is the `created` hook good for?
 
-Anything that doesn't need the DOM.
+Well, since we don't have access to our DOM element, we should use `created` for anything that doesn't need the DOM element.
 
 Oftentimes it is used to fetch data:
 ```js
@@ -121,10 +123,6 @@ export default {
 ```
 
 The advantage of using `created` instead of `mounted` is that `created` will be called a little sooner. This means you'll get your data just a tiny bit faster.
-
-In most apps this difference won't be so noticeable.
-
-But if you have a large, complicated application, it could be a significant speed up.
 
 ## Mounting the Component
 Earlier I said that the `created` hook doesn't have access to the DOM.
