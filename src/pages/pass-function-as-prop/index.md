@@ -1,6 +1,7 @@
 ---
 title: How to Pass a Function as a Prop in Vue
 date: 2018-11-30
+description: While you can pass a function as a prop, this is almost always a bad idea. Instead, there is probably a feature of Vue that is designed exactly to solve your problem. If you keep reading you'll see what I mean.
 ---
 It's a pretty common question that newer Vue developers often ask.
 
@@ -8,12 +9,12 @@ You can pass strings, arrays, numbers, and objects as props.
 
 But can you pass a function as a prop?
 
-**While you can pass a function as a prop, this is almost always a bad idea. Instead, try using a feature of Vue that is more suited to your problem.**
+**While you can pass a function as a prop, this is almost always a bad idea. Instead, there is probably a feature of Vue that is designed exactly to solve your problem.**
 
 If you keep reading you'll see what I mean.
 
 In this article I'll show you:
-- How to pass a function as a prop -- even though you shouldn't
+- How to pass a function as a prop -- even though you probably shouldn't
 - Why React and Vue are different when it comes to passing methods as props
 - Why events or scoped slots might be better solutions
 - How you can access a parent's scope in the child component
@@ -49,11 +50,11 @@ If you're coming from React you're used to passing down functions all of the tim
 
 In React you'll pass a function from a parent to a child component, so the child can communicate back up to the parent. Props and data flow down, and function calls flow up.
 
-Vue, however, has a different mechanism for achieving child -> parent communication.
+**Vue, however, has a different mechanism for achieving child -> parent communication.**
 
 We use [events](https://vuejs.org/v2/guide/events.html) in Vue.
 
-This works in the same way that the DOM works -- providing a little more consistency with browser than React does. Elements can emit events, and these events can be listened to.
+This works in the same way that the DOM works -- providing a little more consistency with the browser than what React does. Elements can emit events, and these events can be listened to.
 
 So even though [it can be tempting](https://medium.com/front-end-hacking/passing-methods-as-props-in-vue-js-d65805bccee) to pass functions as props in Vue, it's considered an anti-pattern.
 
@@ -95,13 +96,13 @@ But events don't quite solve _all_ of our problems.
 ## Accessing a parent's scope from the child component
 In many cases the problem you are trying to solve is accessing values from different scopes.
 
-The parent component has one scope, and the child component another. Often you want to access a value in the child component from the parent, or access a value in the parent component from the child.
+The parent component has one scope, and the child component another. **Often you want to access a value in the child component from the parent, or access a value in the parent component from the child.**
 
-Normally Vue prevents us from doing this directly, which is a good thing.
+Vue prevents us from doing this directly, which is a good thing.
 
 It keeps our components more encapsulated and promotes their reusability. This makes your code cleaner and prevents lots of headaches in the long run.
 
-You may be tempted to try and pass functions as props to get around this.
+But you may be tempted to try and pass functions as props to get around this.
 
 ### Getting a value from the parent
 If you want a child component to access a parent's method, it seems obvious to just pass the method straight down as a prop.
@@ -142,9 +143,9 @@ export default {
 
 What's wrong with that?
 
-It's not exactly wrong, but it's much better to use events in this case.
+Well, it's not exactly _wrong_, but it's much better to use events in this case.
 
-Instead of the child component calling the function when it needs to, it will simply emit an event. Then the parent will receive that event, call the function, and then the props that are passed down to the child component will be updated.
+Then, instead of the child component calling the function when it needs to, it will simply emit an event. Then the parent will receive that event, call the function, and then the props that are passed down to the child component will be updated.
 
 This is a much better way of achieving the same effect.
 
