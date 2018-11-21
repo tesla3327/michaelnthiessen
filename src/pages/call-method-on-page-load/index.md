@@ -1,6 +1,6 @@
 ---
 title: How to Call a Vue Method on Page Load
-date: 2018-11-20
+date: 2018-11-21
 description: You'll want to use the 'mounted' lifecycle hook so that you can run code as soon as your component is mounted to the DOM. From this lifecycle hook you can fetch data, manipulate the DOM, or do anything else you might need in order to initialize your component.
 ---
 
