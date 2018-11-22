@@ -31,7 +31,7 @@ If we start seeing some weird behaviour, knowing with 100% certainty where these
 Keeping these rules makes our components simpler and easier to reason about.
 
 ### Props are overwritten when re-rendering
-And another thing to keep in mind.
+There is another thing to keep in mind.
 
 When Vue re-renders your component -- which happens every time something changes -- it will overwrite any changes you have made to your props.
 
@@ -49,9 +49,7 @@ Instead, you can use the always useful computed prop to solve the same problem.
 I'll show you how.
 
 ### Simple example
-We'll start with a simple example.
-
-(the more complex one is further down the page, as you might have guessed)
+We'll start with a simple example, and then move on to something a little more interesting.
 
 In our `ReversedList` component we will take in a list, reverse it, and render it to the page:
 ```html
@@ -79,7 +77,9 @@ export default {
 
 This is an example of a component that, although functional, isn't written very well.
 
-In fact, it isn't completely functional either. It will only reverse the initial list it is given. If the prop is ever updated with a new list, that won't be reversed 😕.
+__In fact, it isn't completely functional either.__
+
+It will only reverse the initial list it is given. If the prop is ever updated with a new list, that won't be reversed 😕.
 
 But, we can use a computed prop to clean this component up!
 ```html
@@ -115,14 +115,62 @@ We're just getting started though. Let's move on to something a little more comp
 ### The (more) complicated example
 Okay, so you might have already known to use computed props like we just showed.
 
+But what if you don't always want to use the computed value?
 
+How do we switch between using the prop passed in from the parent, and using the computed prop?
 
+Let's expand our example.
 
-- data is good for props used for initialization
-- computed is great because it will always stay up to date
-- doesn't have to always modify the value
+Now we will have a button in our component that will toggle reversing the list. This way we will be switching between using the list as-is from the parent, and using the computed reversed list:
+```html
+<template>
+  <div>
+    <!-- Add in a button that toggles our `reversed` flag -->
+    <button @click="reversed = !reversed">Toggle</button>
+    <ul>
+      <li v-for="item in reversedList" />
+    </ul>
+  </div>
+</template>
+```
+```js
+export default {
+  name: 'ReversedList',
+  props: {
+    list: {
+      type: Array,
+      required: true,
+    }
+  },
+  data() {
+    return {
+      // Define a reversed data property
+      reversed: false,
+    };
+  },
+  computed: {
+    reversedList() {
+      // Check if we need to reverse the list
+      if (this.reversed) {
+        return this.list.reverse();
+      } else {
+        // If not, return the plain list passed in
+        return this.list;
+      }
+    }
+  }
+};
+```
 
-Example: Passing a list to child component, computed prop used to display list. Button on child reverses list. Demonstrates you can transform or pass-through in a computed prop.
+First, we define a variable in our reactive data called `reversed`, which keeps track of whether or not we should be showing the reversed list.
+
+Second, we add in a button. When the button is clicked, we toggle `reversed` between `true` and `false`.
+
+Third, we update our computed property `reversedList` to also rely on our `reversed` flag. Based on this flag we can decide to reverse the list, or just use what was passed in as a prop.
+
+**Here we see a bit more of the power and flexibility of computed props.**
+
+We don't have to tell Vue that we need to update `reversedList` when either `reversed` or `list` change, it just _knows_.
 
 ## Trying to communicate with parents
 - props flow down
