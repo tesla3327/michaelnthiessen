@@ -1,6 +1,6 @@
 ---
 title: How to Pass a Function as a Prop in Vue
-date: 2018-11-30
+date: 2018-11-22
 description: While you can pass a function as a prop, this is almost always a bad idea. Instead, there is probably a feature of Vue that is designed exactly to solve your problem. If you keep reading you'll see what I mean.
 ---
 It's a pretty common question that newer Vue developers often ask.
@@ -12,6 +12,8 @@ But can you pass a function as a prop?
 **While you can pass a function as a prop, this is almost always a bad idea. Instead, there is probably a feature of Vue that is designed exactly to solve your problem.**
 
 If you keep reading you'll see what I mean.
+
+![](https://media.giphy.com/media/rD8R00QOKwfxC/giphy.gif)
 
 In this article I'll show you:
 - How to pass a function as a prop -- even though you probably shouldn't
@@ -96,7 +98,9 @@ But events don't quite solve _all_ of our problems.
 ## Accessing a parent's scope from the child component
 In many cases the problem you are trying to solve is accessing values from different scopes.
 
-The parent component has one scope, and the child component another. **Often you want to access a value in the child component from the parent, or access a value in the parent component from the child.**
+The parent component has one scope, and the child component another.
+
+**Often you want to access a value in the child component from the parent, or access a value in the parent component from the child.**
 
 Vue prevents us from doing this directly, which is a good thing.
 
@@ -149,16 +153,10 @@ Then, instead of the child component calling the function when it needs to, it w
 
 This is a much better way of achieving the same effect.
 
-We can illustrate this using a more concrete example:
-
-TK more creative example here
-
 ### Getting a value from the child
 In other cases we may want to get a value from the child into the parent, and we're using functions for that.
 
 For example, you might be doing this. The parent's function accepts the value from the child and does something with it:
-
-TK better examples
 
 ```html
 <!-- Parent -->
@@ -249,6 +247,8 @@ For that, we have scoped slots!
 Scoped slots are a more advanced topic, but they are also incredibly useful.
 
 In fact, I would consider them to be one of the most powerful features that Vue offers.
+
+![](https://media.giphy.com/media/11cFgJK4tK4Jpu/giphy.gif)
 
 They let you blur the lines between what is in the child's scope and what is in the parent's scope. But it's done in a very clean way that leaves your components as composable as ever.
 
