@@ -1,6 +1,7 @@
 ---
 title: "React vs Vue: Which is growing faster?"
 date: 2018-10-04
+description: Which is better, React or Vue? We need to look at the numbers to see not what people think, but what people are doing. The metrics we'll be looking at are Hacker News popularity, NPM downloads, Github stars, Google Trends, and Reddit subscribers.
 ---
 
 It's the age old -- or maybe year old -- question.

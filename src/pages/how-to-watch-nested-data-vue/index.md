@@ -1,6 +1,7 @@
 ---
 title: How to Watch Nested Data in Vue
 date: 2018-10-18
+description: You have an array or an object as a prop, and you want your app to do something whenever that data changes. So you create a watcher for that property, but Vue doesn't seem to fire the watcher when the nested data changes. Here's how you solve this"
 ---
 
 You have an **array or an object** as a prop, and you want your app to do something whenever that data changes.

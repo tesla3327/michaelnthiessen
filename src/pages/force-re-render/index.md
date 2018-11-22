@@ -1,6 +1,7 @@
 ---
 title: The correct way to force Vue to re-render a component
 date: 2018-09-08
+description: Sometimes Vue's reactivity system isn't enough, and you just need to re-render a component. Or maybe you just want to blow away the current DOM and start over. So how do you get Vue to re-render a component the right way?
 ---
 
 Sometimes Vue's reactivity system isn't enough, and you just need to re-render a component.

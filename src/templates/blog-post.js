@@ -18,13 +18,14 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>{`${post.frontmatter.title} | ${siteTitle}`}</title>
+          <title>{post.frontmatter.title}</title>
           <style>
             {`img {
               display: block;
               margin: 0 auto;
             }`}
           </style>
+          <meta name="description" content={post.frontmatter.description} />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -92,6 +93,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        description
       }
     }
   }
