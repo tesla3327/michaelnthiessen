@@ -1,7 +1,7 @@
 ---
-title: How to fix this is undefined in Vue
+title: "How to fix \"this is undefined\" in Vue"
 date: 2018-09-10
-description: "Your VueJS app doesn't work, and you get an error that says: this is undefined. Don't worry, you're not alone &mdash; I've run into this issue countless times, but I eventually figured out how to avoid it."
+description: "You get an error that says: \"this is undefined\". Don't worry, you're not alone &mdash; I've run into this issue countless times, and I'll show you just how to solve it."
 ---
 
 You're happily coding along, loving how awesome Vue is, when it strikes.
@@ -13,7 +13,7 @@ Your VueJS app doesn't work, and you get an error that says:
 this is undefined
 ```
 
-Don't worry, you're not alone -- I've run into this issue countless times, but I eventually figured out how to avoid it.
+Don't worry, you're not alone -- I've run into this issue countless times, and I'll show you just how to solve it.
 
 **The likely cause of this is that you're mixing up your usage of _regular functions_ and _arrow functions_. My guess is that you're using an arrow function. If you replace the arrow function with a regular function it will probably fix the issue for you.**
 
