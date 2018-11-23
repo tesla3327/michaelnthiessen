@@ -40,13 +40,17 @@ This means that even if you try to mutate the prop locally, Vue will keep overwr
 Not a very good strategy, even if you don't think that this is an anti-pattern.
 
 ## Modifying value in the component
-But what if you really need to modify the value of a prop?
+Now we get to the main reason why someone might want to mutate a prop.
 
-You _still_ don't mutate it.
+There are many situations where we need to take the prop that we are passed, and then do something extra with it.
+
+Maybe you need to take a list and sort it, or filter it.
+
+Maybe it's taking some numbers and summing them together, or doing some other calculation with them.
+
+Well, we _still_ don't mutate the prop.
 
 Instead, you can use the always useful computed prop to solve the same problem.
-
-I'll show you how.
 
 ### Simple example
 We'll start with a simple example, and then move on to something a little more interesting.
@@ -172,18 +176,29 @@ Third, we update our computed property `reversedList` to also rely on our `rever
 
 We don't have to tell Vue that we need to update `reversedList` when either `reversed` or `list` change, it just _knows_.
 
-## Trying to communicate with parents
-- props flow down
-- events flow up
-- communicating with parent should be done with events
-
-Short example of using events (can be taken from another post probably)
-
 ## Getting tripped up by v-model
-https://stackoverflow.com/questions/42614242/avoid-mutating-a-prop-directly-in-vuejs-2
+It's also a little confusing how `v-model` works with props, and [many people run into issues with it](https://stackoverflow.com/questions/42614242/avoid-mutating-a-prop-directly-in-vuejs-2). This error is not uncommon when using it.
 
-- brief explanation of v-model
-- v-model also modifies the value that you pass it
-Short example showing how this works under the hood
+Essentially `v-model` takes care of passing down your prop as well as listening to the change event for you. It also takes care of some edge cases, so you don't have to think too much more.
 
-Example of how to fix this problem
+The important thing here, is that `v-model` is mutating the value that you give to it.
+
+This means that **you can't use props with v-model**, or you'll get this error.
+
+Example of what not to do:
+```html
+<template>
+  <input v-model="firstName" />
+</template>
+```
+```js
+export default {
+  props: {
+    firstName: String,
+  }
+}
+```
+
+Instead, you need to handle the input changes yourself, or include the input in the parent component.
+
+You can check out [what the docs have to say](https://vuejs.org/v2/guide/forms.html#Basic-Usage) about `v-model` for more information.
