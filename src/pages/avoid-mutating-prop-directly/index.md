@@ -3,20 +3,116 @@ title: "Vue Error: Avoid Mutating a Prop Directly"
 date: 2018-11-30
 description:
 ---
-
-Intro
+You probably found this article because you've gotten this error:
 
 ![](error.png)
 
+I'll show you a simple pattern you can use to fix this error -- and never see it again.
+
+By the end of this article you'll learn:
+- A **simple pattern for fixing this issue**
+- What this error means, and what causes it
+- Why **mutating props is an anti-pattern**
+- How to avoid this when using **`v-model`**
+
 ## How is this caused?
-
-
-## Mutating props in Vue is an anti-pattern
 Here is the error message in full:
 
 > Error message: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
 
 The [docs also explain](https://vuejs.org/v2/guide/migration.html#Prop-Mutation-deprecated) what's going on here.
+
+**This error is caused by taking a prop that is passed in by the parent component, and then changing that value.**
+
+It applies equally to objects, arrays, and strings and numbers -- and any other value you can use in Javascript.
+
+Changing the value in a child component won't change it in the parent component, but it's a symptom of not having thought out your component design clearly enough.
+
+We'll cover how to fix this using a simple pattern in the last part of the article, so hold on until we get there!
+
+Here's what it might look like to accidentally mutate a prop:
+```js
+export default {
+  props: {
+    movies: Array,
+    user: Object,
+    searchQuery: String,
+  }
+}
+```
+
+We have 3 different props defined: `movies`, `user`, and `searchQuery`, all of different types.
+
+Before rendering the list of movies we'll sort it:
+```js
+export default {
+  props: {
+    movies: Array,
+    user: Object,
+    searchQuery: String,
+  },
+  methods: {
+    sortMovies() {
+      this.movies = this.movies.sort();
+    }
+  }
+```
+
+We can also update our search query as the user is typing:
+```js
+export default {
+  props: {
+    movies: Array,
+    user: Object,
+    searchQuery: String,
+  },
+  methods: {
+    sortMovies() {
+      this.movies = this.movies.sort();
+    },
+    search(query) {
+      this.searchQuery = query;
+    }
+  }
+}
+```
+
+And while we're at it, we'll want to update the list of favourite movies for the user:
+```js
+export default {
+  props: {
+    movies: Array,
+    user: Object,
+    searchQuery: String,
+  },
+  methods: {
+    sortMovies() {
+      this.movies = this.movies.sort();
+    },
+    search(query) {
+      this.searchQuery = query;
+    },
+    addToFavourites(movie) {
+      this.user.favourites.push(movie);
+    }
+  }
+}
+```
+
+**All 3 of these methods mutate props!!**
+
+It's easy to accidentally do this -- some of these methods don't really even _look_ like they're mutating anything.
+
+But they are, and thankfully Vue warns us.
+
+As you can see, it's an easy mistake to make, but why is it considered bad practice in the first place?
+
+## Mutating props in Vue is an anti-pattern
+Yes, in Vue, mutating props like this is considered to be an _anti-pattern_.
+
+Meaning -- please don't do it, or you'll cause a lot of headaches for yourself.
+
+Why an anti-pattern?
 
 In Vue, we pass data down the the component tree using props. A parent component will use props to pass data down to it's children components. Those components in turn pass data down another layer, and so on.
 
@@ -29,6 +125,8 @@ We do this because it ensures that each component is isolated from each other. F
 If we start seeing some weird behaviour, knowing with 100% certainty where these changes are coming from makes it much easier to track down.
 
 Keeping these rules makes our components simpler and easier to reason about.
+
+**But if we mutate props, we are breaking these rules!**
 
 ### Props are overwritten when re-rendering
 There is another thing to keep in mind.
@@ -202,3 +300,12 @@ export default {
 Instead, you need to handle the input changes yourself, or include the input in the parent component.
 
 You can check out [what the docs have to say](https://vuejs.org/v2/guide/forms.html#Basic-Usage) about `v-model` for more information.
+
+## Conclusion
+Now you know why mutating props isn't a good idea, as well as how to use computed props instead.
+
+In my opinion, computed props are one of the most useful features of Vue. You can do a ton of very useful patterns with them.
+
+If this still didn't fix your problem, or you have questions about this article, please reach out to me on Twitter.
+
+I'm always available to help!
