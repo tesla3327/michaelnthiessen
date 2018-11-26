@@ -1,6 +1,6 @@
 ---
 title: How to Pass a Function as a Prop in Vue
-date: 2018-11-22
+date: 2018-11-26
 description: While you can pass a function as a prop, this is almost always a bad idea. Instead, there is probably a feature of Vue that is designed exactly to solve your problem. If you keep reading you'll see what I mean.
 ---
 It's a pretty common question that newer Vue developers often ask.
