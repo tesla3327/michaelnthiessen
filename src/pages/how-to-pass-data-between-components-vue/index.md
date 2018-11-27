@@ -47,13 +47,15 @@ Data **does not flow up**, it only flows down the tree. It can flow through as m
 
 Sort of like a waterfall -- or am I not allowed to use that word in software development?
 
+![waterfall](https://media.giphy.com/media/gK99k8iMtKeJ2/giphy.gif)
+
 What this means is that any data that we want **must either be in the component, or in a component that is higher up in the tree**. If it's higher up we can easily get the data to flow down into our component.
 
 You may be wondering why we would ever keep data outside of a component. I mean, if the component needs some data, why not just keep that data right there in the component itself?
 
 But we'll need to do this in order to solve each of our 4 problems. You'll see soon enough how this plays out.
 
-Ok, so first principle down, but you can only do so much passing data down the tree.
+Ok, so first principle down, but you can only do so much with just passing data down the tree.
 
 ## Principle #2 -- Events are emitted up
 > Events are emitted up through the component tree to parent components
