@@ -1,9 +1,9 @@
 ---
 title: "Vue Error: Avoid Mutating a Prop Directly"
-date: 2018-11-30
-description:
+date: 2018-11-29
+description: "It's a confusing error: \"Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders\". I'll show you a simple pattern you can use to fix this error - and never see it again."
 ---
-You probably found this article because you've gotten this error:
+You probably found this article because you've gotten this confusing error:
 
 ![](error.png)
 
@@ -14,6 +14,8 @@ By the end of this article you'll learn:
 - What this error means, and what causes it
 - Why **mutating props is an anti-pattern**
 - How to avoid this when using **`v-model`**
+
+![Teenage Mutant Ninja Turtles](https://media.giphy.com/media/9JtCCeSviDLFNhYir6/giphy.gif)
 
 ## How is this caused?
 Here is the error message in full:
@@ -112,6 +114,8 @@ Yes, in Vue, mutating props like this is considered to be an _anti-pattern_.
 
 Meaning -- please don't do it, or you'll cause a lot of headaches for yourself.
 
+![](https://media.giphy.com/media/6utVzLiyU9OuHbd70D/giphy.gif)
+
 Why an anti-pattern?
 
 In Vue, we pass data down the the component tree using props. A parent component will use props to pass data down to it's children components. Those components in turn pass data down another layer, and so on.
@@ -145,6 +149,8 @@ There are many situations where we need to take the prop that we are passed, and
 Maybe you need to take a list and sort it, or filter it.
 
 Maybe it's taking some numbers and summing them together, or doing some other calculation with them.
+
+![](https://media.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif)
 
 Well, we _still_ don't mutate the prop.
 
@@ -270,6 +276,8 @@ Second, we add in a button. When the button is clicked, we toggle `reversed` bet
 
 Third, we update our computed property `reversedList` to also rely on our `reversed` flag. Based on this flag we can decide to reverse the list, or just use what was passed in as a prop.
 
+![](https://media.giphy.com/media/NQS199BVOaa1G/giphy.gif)
+
 **Here we see a bit more of the power and flexibility of computed props.**
 
 We don't have to tell Vue that we need to update `reversedList` when either `reversed` or `list` change, it just _knows_.
@@ -305,6 +313,8 @@ You can check out [what the docs have to say](https://vuejs.org/v2/guide/forms.h
 Now you know why mutating props isn't a good idea, as well as how to use computed props instead.
 
 In my opinion, computed props are one of the most useful features of Vue. You can do a ton of very useful patterns with them.
+
+![](https://media.giphy.com/media/7K3p2z8Hh9QOI/giphy.gif)
 
 If this still didn't fix your problem, or you have questions about this article, please reach out to me on Twitter.
 
