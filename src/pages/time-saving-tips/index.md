@@ -79,9 +79,28 @@ In a great article, [Cristi Jora](https://twitter.com/@jora_cristi) shows us how
 
 Check out the article here: [Creating Reusable Transitions in Vue](https://vuejsdevelopers.com/2018/02/26/vue-js-reusable-transitions/)
 
-##
+## Use vue-router to handle client-side routing
+![](vue-router.png)
 
-https://scotch.io/tutorials/getting-started-with-vue-router
+If you're doing client-side routing, hand-rolling your own solution isn't that difficult.
+
+It's actually pretty simple to match routes, then swap between different components.
+
+But just using `vue-router` is _so much easier_.
+
+And once you start dealing with:
+* queries
+* route params
+* nested routes
+* dynamic route matching
+* transitions
+
+...which you probably will, writing your own solution gets to be very cumbersome.
+
+Instead, just check out this guide from [Ed Zynda](https://twitter.com/edzynda) on [Getting Started With Vue Router](https://scotch.io/tutorials/getting-started-with-vue-router)
+
+## 
+
 https://scotch.io/tutorials/how-to-write-a-unit-test-for-vuejs
 https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples
 https://scotch.io/tutorials/using-jsx-with-vue-and-why-you-should-care
