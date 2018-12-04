@@ -101,7 +101,6 @@ Instead, just check out this guide from [Ed Zynda](https://twitter.com/edzynda) 
 
 ## 
 
-https://scotch.io/tutorials/how-to-write-a-unit-test-for-vuejs
 https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples
 https://scotch.io/tutorials/using-jsx-with-vue-and-why-you-should-care
 https://alligator.io/vuejs/add-v-model-support/
