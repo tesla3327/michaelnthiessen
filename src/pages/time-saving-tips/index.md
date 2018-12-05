@@ -21,7 +21,7 @@ That's why Evan You created Vuex to go along with Vue.
 
 It's not necessary to use for small projects or projects with simple state. But for larger projects, it's absolutely essential.
 
-If you want to learn more about the problems that Vuex solves, and how to use it in your app, check out [WTF is Vuex? A Beginner's Guide To Vue's Application Data Store](https://vuejsdevelopers.com/2017/05/15/vue-js-what-is-vuex/)
+If you want to learn more about the problems that Vuex solves, and how to use it in your app, check out [WTF is Vuex? A Beginner's Guide To Vue's Application Data Store](https://vuejsdevelopers.com/2017/05/15/vue-js-what-is-vuex/) by [Anthony Gore](https://twitter.com/@anthonygore).
 
 ## Vue doesn't handle multiple root nodes -- yet
 ![](fragments.jpg)
@@ -36,7 +36,7 @@ Currently Vue doesn't support fragments, although there will be support for them
 
 It's something that React has had for awhile now, but it took a rewrite of the rendering system in order for them to implement this. Vue is in the same situation.
 
-However, you can use functional components to get around this issue while we wait for Vue 3.0 to be released. You can read more about that in [Can A Vue Template Have Multiple Root Nodes (Fragments)?](https://vuejsdevelopers.com/2018/09/11/vue-multiple-root-fragments/)
+However, you can use functional components to get around this issue while we wait for Vue 3.0 to be released. You can read more about that in [Can A Vue Template Have Multiple Root Nodes (Fragments)?](https://vuejsdevelopers.com/2018/09/11/vue-multiple-root-fragments/) by [Anthony Gore](https://twitter.com/@anthonygore).
 
 ## Validate your forms the easy way -- using Vuelidate
 ![](vuelidate.png)
@@ -55,7 +55,7 @@ This is where Vuelidate comes in.
 
 It's a library that makes it super easy to add custom validation, and does all the heavy lifting for you.
 
-Learn how to setup Vuelidate by reading [Simple Vue.js Form Validation with Vuelidate](https://vuejsdevelopers.com/2018/08/27/vue-js-form-handling-vuelidate/)
+Learn how to setup Vuelidate by reading [Simple Vue.js Form Validation with Vuelidate](https://vuejsdevelopers.com/2018/08/27/vue-js-form-handling-vuelidate/) by [Dobromir Hristov](https://twitter.com/@d_m_hristov).
 
 ## Build components that play nicely with each other
 ![](play_nicely.jpg)
@@ -88,6 +88,8 @@ It's actually pretty simple to match routes, then swap between different compone
 
 But just using `vue-router` is _so much easier_.
 
+It's also an official Vue package, so you know it will always work really well with Vue.
+
 And once you start dealing with:
 * queries
 * route params
@@ -99,14 +101,71 @@ And once you start dealing with:
 
 Instead, just check out this guide from [Ed Zynda](https://twitter.com/edzynda) on [Getting Started With Vue Router](https://scotch.io/tutorials/getting-started-with-vue-router)
 
-## 
+## Create filters to reuse formatting
+![](filters.jpg)
 
-https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples
-https://scotch.io/tutorials/using-jsx-with-vue-and-why-you-should-care
-https://alligator.io/vuejs/add-v-model-support/
-https://alligator.io/vuejs/dynamic-styles/
-https://alligator.io/vuejs/component-instancing/
-https://alligator.io/vuejs/rest-api-axios/
+Formatting data to display on screen can get annoying.
+
+If you're dealing with lots of numbers, percentages, dates, currencies, names, or anything else like that, you'll likely have functions that format that data for you.
+
+Vue comes with this great feature called _filters_, which was inspired by Angular.
+
+They let you easily encapsulate these formatting functions and use them in your template with a really clean syntax.
+
+But don't just take my word for it.
+
+Check out this very detailed article from [Rachid Laasri](https://twitter.com/rashidlaasri), which has tons of examples on how to write your own filters: [How to Create Filters in Vue.js with Examples](https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples)
+
+## Don't be afraid of JSX -- it's extremely powerful
+![](jsx.jpg)
+
+A lot of people are intimidated by JSX.
+
+I get it.
+
+It has a weird syntax, and it can be difficult to wrap your head around how it's used.
+
+But sometimes -- especially when writing higher-level reusable components -- a template just doesn't cut it. You need to take advantage of the full power of the `render` method.
+
+And JSX is one of the easiest ways of doing that.
+
+[Samuel Oloruntoba](https://twitter.com/Kayandra_X) has written a great introduction to JSX and why exactly it is great that Vue has support for it: [Using JSX with Vue and Why You Should Care](https://scotch.io/tutorials/using-jsx-with-vue-and-why-you-should-care)
+
+## Add v-model support to custom components
+![](https://media.giphy.com/media/8vwFqPVe0JhpyyIIl7/giphy.gif)
+
+As web developers, our jobs revolve around getting data from inputs.
+
+Vue gives us `v-model`, which is some syntactic sugar that creates a two-way data-binding for us. This is great for inputs, as it simplifies working with them a lot.
+
+But did you know you can add `v-model` support to your own components?
+
+[Joshua Bemenderfer](https://twitter.com/@tribex_) shows us how this can be done in [Adding v-model Support to Custom Vue.js Components](https://alligator.io/vuejs/add-v-model-support/).
+
+## Understand how Vue component instances work
+![](https://media.giphy.com/media/iywZ2e4SwSuwU/giphy.gif)
+
+Vue has a very clever design to improve performance and reduce its memory footprint.
+
+While not necessary, understanding how this works under the hood will only help you as you build more and more Vue components.
+
+Besides, it's really interesting!
+
+In this brief but very informative article by [Joshua Bemenderfer](https://twitter.com/@tribex_), learn how Vue creates component instances: [Understanding Vue.js Component Instancing](https://alligator.io/vuejs/component-instancing/).
+
+## Learn how to use Axios for data fetching
+![](https://media.giphy.com/media/2Faz1ANKPPUY4XhT2/giphy.gif)
+
+Almost every app needs to fetch or post data.
+
+The most popular library to help us do that these days is [Axios](https://github.com/axios/axios). It is really configurable, and makes working with external data _so_ much easier.
+
+You can just use the browser's built-in `fetch` most of the time. But you'll probably end up writing a wrapper for it anyways, to make common cases more convenient to deal with.
+
+Might as well just start off on the right foot and use axios from the beginning then!
+
+Learn how to integrate `axios` into your Vue app by reading [Vue.js REST API Consumption with Axios](https://alligator.io/vuejs/rest-api-axios/) from [Joshua Bemenderfer](https://twitter.com/@tribex_).
+
 https://alligator.io/vuejs/css-frameworks-vuejs/
 https://alligator.io/vuejs/vue-async-components-load-error/
 https://alligator.io/vuejs/passing-multiple-properties/
