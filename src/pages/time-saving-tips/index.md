@@ -166,11 +166,74 @@ Might as well just start off on the right foot and use axios from the beginning 
 
 Learn how to integrate `axios` into your Vue app by reading [Vue.js REST API Consumption with Axios](https://alligator.io/vuejs/rest-api-axios/) from [Joshua Bemenderfer](https://twitter.com/@tribex_).
 
-https://alligator.io/vuejs/css-frameworks-vuejs/
-https://alligator.io/vuejs/vue-async-components-load-error/
-https://alligator.io/vuejs/passing-multiple-properties/
-https://alligator.io/vuejs/common-gotchas/
-https://adamwathan.me/the-trick-to-understanding-scoped-slots-in-vuejs/
+## Use an off the shelf CSS framework
+![](https://media.giphy.com/media/12ttoBXEqixfmo/giphy.gif)
+
+Getting all of your CSS _just right_ can take an extraordinary amount of time.
+
+My suggestion is to just use a CSS framework, where most of the work is already done for you.
+
+All of the styling, colours, drop shadows, and aesthetic elements are already worked out. No need to learn graphic design! On top of that, they all come with tons of CSS styles to help you with layout, forms, and other common elements like buttons, popups, alert boxes, and so much more.
+
+The best part is the variety.
+
+There are tons of great ones to pick from:
+- [Tailwind](https://tailwindcss.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Bulma](https://bulma.io/)
+- [Foundation](https://foundation.zurb.com/sites/docs/)
+
+And don't waste any time trying to figure out how to integrate them into your app. [Dave Berning](https://twitter.com/@daveberning) has written a great article to help get you started: [Integrating and Using CSS Frameworks with Vue.js](https://alligator.io/vuejs/css-frameworks-vuejs/).
+
+## Show loading and error states on your async components
+![](https://media.giphy.com/media/OiC5BKaPVLl60/giphy.gif)
+
+You probably hear a lot about web performance these days -- and for good reason.
+
+The easiest way to get your application bundle smaller is to split out the code into multiple, smaller, chunks. **Vue comes with first-class support for this**, which is really cool!
+
+But the user's experience can suffer if we don't provide a good loading state while fetching the component. And we also want to show a good error state if something goes wrong.
+
+Luckily, integrating these isn't too difficult.
+
+[Joshua Bemenderfer](https://twitter.com/@tribex_) shows us exactly how this can be done in [Showing Loading & Error States with Vue.js Async Components](https://alligator.io/vuejs/vue-async-components-load-error/).
+
+## Clean up your props for goodness sake!
+![](https://media.giphy.com/media/3oKIPCSX4UHmuS41TG/giphy.gif)
+
+Some components only require a few props, but others require passing many, many, props.
+
+Eventually this can get pretty messy.
+
+```html
+<v-btn
+  color="primary"
+  href="https://michaelnthiessen.com"
+  small
+  outline
+  block
+  ripple
+>
+  Hello
+</v-btn>
+```
+
+But there are several different ways that we can clean this up. Not only will this make our code easier to look at, but it will also be easier to understand, and modify in the future.
+
+[Alex Jover Morales](https://twitter.com/@alexjoverm) has written an excellent article outlining the different ways you can clean up your props. Check it out: [Passing Multiple Properties to a Vue.js Component](https://alligator.io/vuejs/passing-multiple-properties/).
+
+## Beware of some common pitfalls
+![](https://media.giphy.com/media/oxyfEcT74rApq/giphy.gif)
+
+Like any piece of technology, Vue has some areas that can catch you off guard.
+
+I cannot tell you how many hours I wasted because I didn't understand some of these things. But learning them didn't take that long either.
+
+If only I had known!
+
+Instead of struggling through these gotchas like I did when I was learning Vue, you can avoid most of these.
+
+Read [Common Vue.js Gotchas](https://alligator.io/vuejs/common-gotchas/) by [Joshua Bemenderfer](https://twitter.com/@tribex_), and save yourself a lot of frustration!
 
 - a bunch of my articles as well
 
