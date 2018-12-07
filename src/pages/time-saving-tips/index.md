@@ -235,5 +235,83 @@ Instead of struggling through these gotchas like I did when I was learning Vue, 
 
 Read [Common Vue.js Gotchas](https://alligator.io/vuejs/common-gotchas/) by [Joshua Bemenderfer](https://twitter.com/@tribex_), and save yourself a lot of frustration!
 
-- a bunch of my articles as well
+## Force Vue to re-render -- the right way
+![](https://media.giphy.com/media/11BAxHG7paxJcI/giphy.gif)
+
+In 99% of cases where something doesn't rerender properly, it's a reactivity problem.
+
+So if you're new to Vue, you _definitely_ need to [learn as much as you can about reactivity](https://medium.com/js-dojo/reactivity-in-vue-js-and-its-pitfalls-de07a29c9407). I see it as being one of the biggest sticking points for new developers.
+
+However, sometimes you need a sledgehammer to get things done and ship your code. Unfortunately, deadlines don't move themselves.
+
+And _sometimes_, forcing a component to rerender is actually the best way to do it (but very very rarely). 
+
+By far my most popular article, I've written about [the proper way to rerender a component](/force-re-render/).
+
+
+## Fix "this is undefined" error
+![](https://media.giphy.com/media/xT9IgBWB7B8ga6NUv6/giphy.gif)
+
+Perhaps one of the most common errors to run into is this one.
+
+I used to run into this one _all_ of the time. But now I know exactly what I was doing wrong. It has do with the type of function you're using, and how you're using it.
+
+But I won't get into that here.
+
+Learn [how to fix the "this is undefined" error](/this-is-undefined/), and get on with your life!
+
+## Learn the differences between props and data
+![](https://media.giphy.com/media/qoAtIlmzKqVe8/giphy.gif)
+
+Vue comes with two different ways of storing variables, props and data.
+
+These can be confusing at first, since they seem like they do similar things, and it’s not clear when to use one vs the other.
+
+The answer involves reactivity, naming collisions, and the direction of data flow (spoiler: it's down).
+
+In my article on [the difference between props and data](/vue-props-vs-data/), I also go into detail on where you would use each one, and how you would use them together.
+
+It's a really important topic to grasp, so make sure you understand it!
+
+## Watching nested data in Vue
+![](https://media.giphy.com/media/ywDAO6ONmOSVG/giphy.gif)
+
+Watchers are a really great feature in Vue. They make adding side-effects really clean, and they're easy to use (like the rest of Vue).
+
+Except when you try and use them on an array or object.
+
+Nested data structures like arrays and objects are a little trickier to work with.
+
+Just yesterday, I spent at least 30 minutes helping a co-worker figure out an issue with his Vue component.
+
+Turned out to be an issue with nested data 🤦‍♂️.
+
+Because it's such a common problem, I've written an in-depth article on [how to watch nested data](/how-to-watch-nested-data-vue/), which also goes into some of the more advanced features that watchers give you.
+
+## Don't confuse computed props and watchers
+![](https://media.giphy.com/media/zQc8STzaOlJ3q/giphy.gif)
+
+I know that most people don't accidentally write a computed prop when they meant to write a watcher.
+
+That's just silly.
+
+But I see lots of people who use a watcher when they should instead be using a computed prop. Or using a computed prop when a watcher would be a better fit.
+
+Although they seem like they do similar things, watchers and computed props are actually quite different.
+
+My rule of thumb: make it a computed prop!
+
+However, if you want to know more, I wrote an article on [the differences between computed props and watchers](/difference-between-computed-property-and-watcher/).
+
+[Warn: Property or Method is Not Defined](/property-or-method-not-defined/)
+
+[How to Implement a Mouseover or Hover in Vue](/hover-in-vue/)
+
+[How to Call a Vue Method on Page Load](/call-method-on-page-load/)
+
+[How to Pass a Function as a Prop in Vue](/pass-function-as-prop/)
+
+[Vue Error: Avoid Mutating a Prop Directly](/avoid-mutating-prop-directly/)
+
+[How to Dynamically Add a Class Name in Vue](/dynamically-add-class-name/)
 
