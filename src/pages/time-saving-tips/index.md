@@ -303,6 +303,9 @@ My rule of thumb: make it a computed prop!
 
 However, if you want to know more, I wrote an article on [the differences between computed props and watchers](/difference-between-computed-property-and-watcher/).
 
+## Make sure to avoid annoying errors
+
+
 [Warn: Property or Method is Not Defined](/property-or-method-not-defined/)
 
 [How to Implement a Mouseover or Hover in Vue](/hover-in-vue/)
