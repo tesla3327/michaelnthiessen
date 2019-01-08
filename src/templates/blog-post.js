@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import Signup from '../components/Signup'
 import { rhythm, scale } from '../utils/typography'
 
 // import './prism-atom-dark.css';
@@ -39,6 +40,9 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <Signup />
+
         <hr
           style={{
             marginBottom: rhythm(1),
