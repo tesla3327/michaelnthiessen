@@ -248,7 +248,6 @@ And _sometimes_, forcing a component to rerender is actually the best way to do 
 
 By far my most popular article, I've written about [the proper way to rerender a component](/force-re-render/).
 
-
 ## Fix "this is undefined" error
 ![](https://media.giphy.com/media/xT9IgBWB7B8ga6NUv6/giphy.gif)
 
