@@ -303,16 +303,78 @@ My rule of thumb: make it a computed prop!
 
 However, if you want to know more, I wrote an article on [the differences between computed props and watchers](/difference-between-computed-property-and-watcher/).
 
-## Make sure to avoid annoying errors
+## Make sure to avoid annoying errors and warnings
+![Stapler in jello prank](https://media.giphy.com/media/jNmhFR8sdA9G0/giphy.gif)
 
+As web development has gotten more complex, so have our tools. These days we have linters, editors, type checkers, and all sorts of things that save us time by telling us our mistakes (almost) as soon as we make them.
 
-[Warn: Property or Method is Not Defined](/property-or-method-not-defined/)
+Vue also has really good warning and error messages, but if you keep getting them it can be annoying.
 
-[How to Implement a Mouseover or Hover in Vue](/hover-in-vue/)
+Why not just avoid them altogether?
 
-[How to Call a Vue Method on Page Load](/call-method-on-page-load/)
+One of the most common warnings I got when I was first learning Vue was this one:
 
-[How to Pass a Function as a Prop in Vue](/pass-function-as-prop/)
+![](../property-or-method-not-defined/error.png)
+
+Luckily, I wrote an [entire article](/property-or-method-not-defined/) on what causes this, and more importantly, how to avoid it altogether!
+
+## Figure out how to react to mouse hover
+![](https://media.giphy.com/media/3o6ZsW5lgayQl1uX6w/giphy.gif)
+
+In CSS it's pretty easy to change things on `hover`. We just use the `:hover` [psuedo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover):
+
+```css
+.item {
+  background: blue;
+}
+
+.item:hover {
+  background: green;
+}
+```
+
+In Vue it gets a [little](https://forum.vuejs.org/t/displaying-some-elements-on-hover/26974) [trickier](https://stackoverflow.com/questions/30911933/mouseover-or-hover-vue-js), because we don't have this functionality built in.
+
+We have to implement most of this ourselves.
+
+But don't worry, it's not _that_ much work.
+
+I've written an in-depth article on using hover in Vue. It covers a lot of different things you'll want to know:
+- How to implement a **hover effect** in Vue
+- How to **show an element** on mouseover
+- How to dynamically **update classes** with a mouseover
+- How to do this even on **custom Vue components**
+
+Check out the article: [How to Implement a Mouseover or Hover in Vue](/hover-in-vue/)
+
+## Properly call methods when the page loads
+![](https://media.giphy.com/media/1SyXpUUfyAe1Yx8rUU/giphy.gif)
+
+It's an extremely common pattern in web apps to perform some sort of logic as soon as the page is loaded. Often you're fetching data, or even manipulating the DOM somehow.
+
+But there are a lot of _wrong_ ways of doing this with Vue.
+
+Lucky for us, Vue gives us lifecycle hooks that let us do this in a really clean and simple way.
+
+You can check out this [in-depth article](/call-method-on-page-load/) on how to do this the proper way. The article also goes deep into what lifecycle methods are, and how we can hook into them.
+
+## Understand how to pass a function as a prop
+![](https://media.giphy.com/media/njYrp176NQsHS/giphy.gif)
+
+Short answer: **you don't**.
+
+But that's a hugely unsatisfying answer, so of course I'll expand on it.
+
+This question comes up for 2 main reasons:
+
+1. You want to communicate from the child to the parent
+2. You need to abstract your component behaviour in a specific way
+
+In React we pass functions around all the time, and that's how we would solve both of these problems. But Vue gives us two separate mechanisms for solving these two problems.
+
+**These mechanisms are [events](https://vuejs.org/v2/guide/events.html) and [scoped slots](https://adamwathan.me/the-trick-to-understanding-scoped-slots-in-vuejs/)**.
+
+If you want to learn how to use these to solve either of these problems, as well as the differences between how React and Vue work (and more!), check out this detailed article I wrote about it: [How to Pass a Function as a Prop in Vue](/pass-function-as-prop/)
 
 [Vue Error: Avoid Mutating a Prop Directly](/avoid-mutating-prop-directly/)
 
