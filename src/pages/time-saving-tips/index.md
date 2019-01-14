@@ -375,7 +375,28 @@ In React we pass functions around all the time, and that's how we would solve bo
 
 If you want to learn how to use these to solve either of these problems, as well as the differences between how React and Vue work (and more!), check out this detailed article I wrote about it: [How to Pass a Function as a Prop in Vue](/pass-function-as-prop/)
 
-[Vue Error: Avoid Mutating a Prop Directly](/avoid-mutating-prop-directly/)
+## Learn why mutating props is an anti-pattern
+![Teenage Mutant Ninja Turtles](https://media.giphy.com/media/9JtCCeSviDLFNhYir6/giphy.gif)
 
-[How to Dynamically Add a Class Name in Vue](/dynamically-add-class-name/)
+This is an error you may have seen:
 
+> Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop’s value.
+
+Why is mutating a prop directly not allowed in Vue, and what do you do instead?
+
+I've written [an entire article](/avoid-mutating-prop-directly/) on this subject. I also go into what causes this error, and how to avoid it.
+
+The article also touches on how to avoid getting this error when using `v-model`, as there are some specific things that can be confusing there.
+
+## Dynamically add CSS classes
+![](https://media.giphy.com/media/12P29BwtrvsbbW/giphy.gif)
+
+Vue incorporates HTML and Javascript together in a really beautiful way, but we can't forget about CSS.
+
+CSS is the thing that really makes our apps shine, and is very powerful in it's own right.
+
+A very common pattern in web apps is to add and remove classes from elements based on the state of our application. We do this to show a button is disabled, to animate elements like loading spinners, and a ton of other things.
+
+Vue gives us a lot of options in choosing how to dynamically add and remove CSS classes based on what's going on in our application. **Knowing what these options are gives you more tools, and you'll be able to write better code because of it**.
+
+I wrote an article that covers all of the different ways you can [dynamically add and remove classes in Vue](/dynamically-add-class-name/). We go over array syntax and object syntax, using Javascript expressions to calculate the class, and adding dynamic classes to custom components (you don't need to add a custom `class` prop!). You can even generate your class names on the fly!
