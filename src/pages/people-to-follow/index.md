@@ -1,7 +1,6 @@
 ---
 title: People to Follow
 ---
-
 - Why you should follow them on Twitter
 - Examples of tweets
 
@@ -11,6 +10,7 @@ Not exhaustive, no particular order:
   - Shares interesting thoughts about advanced patterns
   - Has been very helpful to me and responsive on Twitter
   - Great workshop on Advanced Reusable Component design
+  - On Patreon
 - Guillaume Chau
   - Core team member
   - Vue CLI, Vue CLI UI, Vue Dev Tools
@@ -33,5 +33,5 @@ Not exhaustive, no particular order:
 - Alex Jover Morales
   - Lots of cool tips on using Vue
   - Tons of great articles and a course on testing Vue
-  - VueDose (still under construction)
+  - VueDose
 
