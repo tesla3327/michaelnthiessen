@@ -35,6 +35,12 @@ lots of pictures!!!!
 
 ## Picking my tech stack
 
+### The Contenders
+- Vue CLI 3
+- Nuxt
+- Vuepress
+- Gridsome
+
 ### Getting feedback from the community
 - Poll on Twitter with 1148 votes
 - Lots of really useful feedback on frameworks I knew about
