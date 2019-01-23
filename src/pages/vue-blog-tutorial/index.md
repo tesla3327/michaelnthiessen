@@ -8,9 +8,13 @@ description: "There are lots of you that write blogs, and maybe you've been thin
 
 [![](blogging.png)](https://twitter.com/ASpittel/status/1085719817628405762)
 
-There are lots of you that write blogs, and maybe you've been thinking about switching to a Vue-based platform.
+> Tech is based on content creators and knowledge sharing.
 
-Maybe you haven't even gotten started yet.
+While this post isn't about creating content, the [platform that you use](https://twitter.com/dhh/status/1085253071108595712) to write and host that content is still _very_ important.
+
+Lots of you are interested in switching your blog to a Vue-based framework -- or starting out with one from the beginning.
+
+This series is for you.
 
 This is the first article in **a series documenting my progress and my thoughts as I rebuild my blog in Vue.**
 
