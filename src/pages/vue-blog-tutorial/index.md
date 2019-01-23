@@ -1,20 +1,27 @@
 ---
-title: Vue Blog Tutorial
-date: 2019-02-10
-description:
+title: "Rebuilding My Blog in Vue: Part 1"
+date: 2019-01-23
+description: "There are lots of you that write blogs, and maybe you've been thinking about switching to a Vue-based platform. Maybe you haven't even gotten started yet. This is the first article in a series documenting my progress and my thoughts as I rebuild my blog in Vue."
 ---
 
-Keywords:
+[Ali Spittel](https://twitter.com/ASpittel) said this just the other day, and I can't stop thinking about it:
 
-- vue blog template
-- vue blog example
-- vue blog tutorial
-- vuejs blog tutorial
-- vuejs blog template
-- vue cms
-- vue.js blog template
+[![](blogging.png)](https://twitter.com/ASpittel/status/1085719817628405762)
 
-lots of pictures!!!!
+There are lots of you that write blogs, and maybe you've been thinking about switching to a Vue-based platform.
+
+Maybe you haven't even gotten started yet.
+
+This is the first article in **a series documenting my progress and my thoughts as I rebuild my blog in Vue.**
+
+In this first installment we'll cover:
+- Why I think I need to rebuild my blog (_this is a little awkward_ 😳)
+- What my current setup is
+- My blogging wish list
+- The **4 Vue frameworks I'm considering**
+- Lots of the awesome feedback I got from all of you
+
+I'll start it off by justifying the need to rebuild it.
 
 ## I really need to rebuild this blog
 
@@ -24,13 +31,13 @@ For us developers it's really easy to procrastinate by playing around with the t
 
 So I intentionally put off the design of the site, spending just enough time on it to get a working MVP.
 
-And let's be honest here, it's pretty mediocre.
+And **let's be honest here, it's pretty mediocre.**
 
 ![](olddesign.png)
 
 But the site is gaining lots of momentum.
 
-At the time of writing this site is doing more than 13,000 pageviews per month. I feel this blog is now at a point where I should shift my priorities and design an actual site and build out more of the features I want.
+At the time of writing this site is doing more than 16,000 pageviews per month. I feel this blog is now at a point where I should shift my priorities and design an actual site and build out more of the features I want.
 
 ## What's wrong with the blog?
 
@@ -38,7 +45,9 @@ While I could do a redesign and add any missing features with my current setup, 
 
 The first is that **this is a blog about Vue, yet it's built in React**.
 
-I initially chose Gatsby because I knew I could get up and running quickly. But it's _kind of awkward_ to be spending all of this time talking about how to write Vue apps when the site itself isn't in Vue. I have to practice what I preach, right?
+I initially chose [Gatsby](https://www.gatsbyjs.org) because I knew I could get up and running quickly. But it's _kind of awkward_ to be spending all of this time talking about how to write Vue apps when the site itself isn't in Vue.
+
+I have to practice what I preach, right?
 
 ![](https://media.giphy.com/media/J1cwXnPfGsJ0I/giphy.gif)
 
@@ -54,9 +63,11 @@ Most modern blogging tech stacks can broken up into 3 different parts:
 2. Content Management System
 3. Hosting
 
-The biggest one is the blogging framework, so that's what I'll be spending most of my time on.
+The biggest one is the blogging framework, so that's what I'll be focusing on in this post.
 
-### Blogging Framework
+But first, let me explain what my current stack looks like.
+
+### Blogging Framework: Gatsby
 
 ![](gatsby.png)
 
@@ -70,25 +81,25 @@ This means that you get all the speed and SEO benefits of having your site pre-r
 
 I absolutely _love_ this setup, and the 4 alternatives I'll be looking into all do this -- except they use Vue 😉.
 
-### Content Management System
+### Content Management System: Markdown
 
 ![](markdown.png)
 
 The main purpose of a blog is to deliver static content, and hopefully lots of it. This means you need a good way of writing, editing, publishing, and managing your content.
 
-Right now I don't have a CMS.
+Right now I don't have a CMS at all.
 
 I write all of my posts in Markdown, which I have absolutely loved. At first I tried using Google Docs, but that was a disaster.
 
-But Markdown is amazing, and here's why.
+But **Markdown is amazing, and here's why**.
 
 It's familiar to me since I use it every day at my job. It allows me to focus on what I'm writing, and stops me from getting distracted by formatting.
 
-And since I'm writing technical posts, I need to write lots of code examples. Using Markdown is a natural choice for this, since it gives me syntax highlighting for free since I use my code editor to write it.
+And since I'm writing technical posts, I need to write lots of code examples. Using Markdown is a natural choice for this. It gives me syntax highlighting for free since I use my code editor (VS Code) to write it.
 
-I don't think I need anything much fancier than this. Although it would be nice to be able to drop Vue components straight into my Markdown...
+I don't think I need anything much fancier than this. Although it would be nice to be able to drop Vue components straight into my Markdown 🤔.
 
-### Hosting
+### Hosting: Basic Static
 
 ![](asmallorange.png)
 
@@ -100,31 +111,37 @@ I've seen other hosting solutions that are much cheaper, integrate with Github, 
 
 But we'll get to that in a moment.
 
-First, I need to lay out exactly what I'm looking for.
+Next, I need to lay out exactly what I'm looking for.
 
-## My blog wish list
+## My blogging wish list
 
-There are many things that I could look for in a blog, but there a few main ones. All of the alternatives I'm looking at do these things, so it's mostly a matter of figuring out which one does them the best.
+There are many things that I could look for in a blog, but here are the few that matter most to me.
 
-## Really easy to make changes
+All of the alternatives I'm looking at do these things, so it's mostly a matter of figuring out which one does them the best.
 
-This is one of the reasons why I think Wordpress has gained so much adoption.
+### Really easy to make changes
+
+![](https://media.giphy.com/media/PlnQNcQ4RYOhG/giphy.gif)
+
+This is one of the reasons why I think Wordpress became so popular.
 
 You write your posts, you set their publish date, and then you're done. You don't have to deal with complex build systems, or deal with manually uploading or changing files.
 
-Another thing I really like is that you can publish multiple posts at once, but have them set to be released on a schedule. This lets you batch your work, making things more efficient.
+Another thing I really like is that you can publish multiple posts at once, but have them set to be released on a schedule. This lets you batch your work, allowing you to be more efficient with your time.
 
-I also need to be able to preview drafts easily, as well as any changes I'm making to the site.
+I also need to be able to preview my drafts easily, as well as any changes I'm making to the site.
 
-## Add Vue components into Markdown
+### Add Vue components into Markdown
 
 Currently I'm using Markdown to write all of my posts, and I don't want to change that.
 
 However, I do want to the ability to drop Vue components straight into my Markdown posts and have them render. This will make my examples better, since I can have them running right inside of my post.
 
-It also gives me a lot more flexibility in being able to add different kinds of functionality within my posts. For example, I could add an email subscription call-to-action component to each post.
+It also gives me a lot more flexibility in being able to add different kinds of functionality within my posts.
 
-## Static site -> PWA
+For example, I could add an email subscription call-to-action component. Then I can drop it in to my posts wherever it makes the most sense.
+
+### Static site -> PWA
 
 As mentioned before, one of the things I really love about Gatsby is that it's a statically generated site that will bootstrap itself into a PWA once you load the page.
 
@@ -136,7 +153,7 @@ Now that I've figured out my requirements, I need to decide what my tech stack w
 
 I don't want to just randomly choose and commit 100%, so I'll be testing each of these out and see how they stack up against each other. And yes, you can expect some posts in the future exploring each of these in turn.
 
-If you want to follow along with this process, sign up to my newsletter and I'll send an email whenever a new post comes out!
+If you want to follow along with this process, sign up to my newsletter and I'll send you an email whenever a new post comes out!
 
 _You can subscribe at the bottom of the post._
 
@@ -146,9 +163,9 @@ Here are the contenders, ranked based on my initial impressions (which are _very
 
 ### 1. Vuepress
 
-![](vuepress.png)
+<img src="./vuepress.png" width="300" />
 
-This is officially supported by the Vue core team, and is built specifically with documentation in mind. Now, documentation isn't that different from blogging, so they've recently added more first-class support for blogging to the platform.
+[Vuepress](https://vuepress.vuejs.org) is officially supported by the Vue core team, and is built specifically with documentation in mind. Now, documentation isn't that different from blogging, so they've recently added more first-class support for blogging to the platform.
 
 What this means is that Vuepress already has lots of the abstractions and features built into it that I would need for my blog.
 
@@ -156,39 +173,41 @@ We get a statically generated site that bootstraps itself into a PWA, and an eas
 
 Not to mention lots of other great features like [permalinks](https://vuepress.vuejs.org/guide/permalinks.html) and [Markdown slots](https://vuepress.vuejs.org/guide/markdown-slot.html) for more composability.
 
+We even get an awesome [blog template](https://github.com/bencodezen/vuepress-blog-boilerplate) that [Ben Hong](https://twitter.com/bencodezen) created!
+
 My only concern is that version `1.x.x` is still in the alpha stage. So it might be just a _little_ too early for me.
 
 ### 2. Gridsome
 
-![](gridsome.png)
+![](gridsome.svg)
 
-This one is brand new, having only been out for a few months (though it's been in development for over a year), and it looks really good. Essentially, it's Gatsby but for Vue -- even their marketing website is similar!
+[Gridsome](https://gridsome.org/) is brand new, having only been out for a few months (though it's been in development for over a year), and it looks really good. Essentially, it's Gatsby but for Vue -- even their marketing website is similar!
 
 Honestly, this is a very close second right now. It looks like it has all of the features I want, and looks like an amazing project.
 
 My concerns are that right now there are only 2 developers actively working on it, and it's so new. It may be a little unfair to judge it that way, but I don't have much to go on yet.
 
-Once I start to dig into these frameworks then I'll be able to judge them on their merit alone, and my hope is that Gridsome turns out to be incredible.
+Once I start to dig into these frameworks then I'll be able to judge them on their merit alone, and **my hope is that Gridsome turns out to be incredible**.
 
 ### 3. Nuxt
 
 ![](nuxtjs.png)
 
-Nuxt JS is another really great option. I've been wanting to play around with this one for quite some time now.
+[Nuxt JS](https://nuxtjs.org/) is another really great option. I've been wanting to play around with this one for quite some time now.
 
 It's an application framework that allows you to build static generated websites, single page apps, as well as universal applications (client side + server side together).
 
 My understanding is that it is geared more towards large, complex, applications, so it might be overly complex for a simple blog. However, if you're building the next Slack or Facebook and need some serious power, it's probably the best choice.
 
-Where I work we're starting the slow process of breaking up our monolithic Rails app into microservices. I've had my eye on Nuxt for this for awhile now, so experimenting with it here will also help me to get a sense of whether or not it will be a good fit for that.
+Where I work we're starting the slow process of breaking up our monolithic Rails app into microservices. **I've had my eye on Nuxt for this for awhile now**, so experimenting with it here will also help me to get a sense of whether or not it will be a good fit for that.
 
 ### 4. Vue CLI
 
 ![](vue-cli-ui.png)
 
-It wasn't obvious to me at first that this was an option, since I was thinking only of frameworks. But a few of you on Twitter (we'll get to that in a moment) suggested this as a possibility.
+It wasn't obvious to me at first that this was an option, since I was thinking only of frameworks. But a few of you on Twitter (_we'll get to that in a moment_) suggested this as a possibility.
 
-**Vue CLI 3 is fantastic for setting up a new Vue project**. Even if you aren't using the slick UI.
+**[Vue CLI 3](https://cli.vuejs.org/) is fantastic for setting up a new Vue project**. Even if you aren't using the slick UI.
 
 I've used it in several small demo apps so far, and it's incredibly easy to use and makes the development experience amazing.
 
