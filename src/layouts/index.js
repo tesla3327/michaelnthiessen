@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import printStyles from './print-styles.css';
+
 import { rhythm, scale } from '../utils/typography'
 const headerText = 'Michael Thiessen';
 
@@ -17,6 +19,7 @@ class Template extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1
+          className="header"
           style={{
             ...scale(1),
             marginBottom: rhythm(1.5),
@@ -39,6 +42,7 @@ class Template extends React.Component {
     } else {
       header = (
         <h3
+          className="header"
           style={{
             marginTop: 0,
             marginBottom: rhythm(-1),

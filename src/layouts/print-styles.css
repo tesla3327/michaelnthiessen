@@ -1,0 +1,37 @@
+@media print {
+  .header,
+  .post__date,
+  .bottom-nav,
+  img[src*=".gif"] {
+    display: none !important;
+  }
+
+  img,
+  ul,
+  blockquote,
+  pre,
+  .gatsby-highlight {
+    page-break-inside: avoid !important;
+  }
+
+  .gatsby-highlight,
+  .language-text {
+    -webkit-print-color-adjust: exact;
+  }
+
+  h2, h3, h4, h5, h6,
+  img {
+    page-break-after: avoid;
+  }
+
+  h1 {
+    text-align: center;
+    width: 100%;
+    margin-top: 25vh;
+    margin-left: 0 !important;
+    margin-right: 0;
+    padding: 0 !important;
+    page-break-after: always;
+  }
+
+}
