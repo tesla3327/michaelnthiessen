@@ -1,11 +1,13 @@
 import React from 'react'
-import addToMailchimp from 'gatsby-plugin-mailchimp';
+import ReactGA from 'react-ga';
 
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
 import { rhythm } from '../utils/typography'
+
+ReactGA.initialize('UA-96388123-2');
 
 class Signup extends React.Component {
   state = {
@@ -15,10 +17,19 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({ email: e.target.value });
+  }
+
+  handleSubmit = (e) => {
+    ReactGA.event({
+      category: 'Email Opt-in',
+      action: 'Subsribe',
+      label: this.props.label,
+    });
   }
 
   render() {
@@ -40,7 +51,17 @@ class Signup extends React.Component {
             textAlign: 'center',
           }}
         >
-          <form style={{ marginBottom: rhythm(0.5) }} action="https://michaelnthiessen.us7.list-manage.com/subscribe/post?u=aac07b28d06210ba964471dcf&amp;id=a98572f937" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+          <form
+            style={{ marginBottom: rhythm(0.5) }}
+            onSubmit={this.handleSubmit}
+            action="https://michaelnthiessen.us7.list-manage.com/subscribe/post?u=aac07b28d06210ba964471dcf&amp;id=a98572f937"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
+            noValidate
+          >
             <div id="mc_embed_signup_scroll">
               <h3 style={{ marginTop: rhythm(0.5), marginBottom: rhythm(0.3) }}>Get my latest articles</h3>
               <p>Subscribe to get notified whenever I publish a new article!</p>
