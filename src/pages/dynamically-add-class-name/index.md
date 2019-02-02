@@ -12,7 +12,7 @@ It lets you write custom themes more easily, add classes based on the state of t
 
 Of course, there is _a lot_ more we can do here with dynamic classes in Vue.
 
-We'll cover a lot of stuff in this article:
+We'll cover a lot of stuff in this chapter:
 - Using static and dynamic classes in Vue
 - How we can use regular Javascript expressions to calculate our class
 - The array syntax for dynamic class names
@@ -161,7 +161,8 @@ If `darkMode` is `true`, we apply `dark-theme` as our class name. Otherwise we c
 
 Now let's figure out how to add multiple dynamic class names at the same time!
 
-## Using the Array Syntax
+<h2 class="new-page">Using the Array Syntax</h2>
+
 If there are lots of different classes you want to add dynamically, you can use arrays or objects. Both are useful, but we'll cover arrays first.
 
 Since we are just evaluating a javascript expression, you can combine the expressions we just learned with the array syntax:

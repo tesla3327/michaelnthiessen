@@ -94,7 +94,10 @@ In Vue, a tick is a single DOM update cycle. Vue will collect all updates made i
 
 Second, **Vue will create an entirely new component** when we render the second time. Vue will destroy the first one and create a new one. This means that our new `my-component` will go through all of its lifecycles as normal -- `created`, `mounted`, and so on.
 
+<div class="new-page"></div>
+
 *On a side note, you can use `nextTick` with promises if you prefer that*:
+
 ```js
 forceRerender() {
   // Remove my-component from the DOM

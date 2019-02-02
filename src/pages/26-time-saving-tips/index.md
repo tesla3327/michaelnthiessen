@@ -12,9 +12,8 @@ But it's hard to know what things we should be learning.
 
 That's why I put together this list of **26 articles that will help you save time**, by teaching you how to avoid some common time-wasters.
 
-And once you've gone through this list, you can share it with others so that you can help them save time too!
+<h2 class="new-page">1. Use Vuex before it's too late</h2>
 
-## 1. Use Vuex before it's too late
 ![](vuex.jpg)
 
 If you're building a medium to large sized app, your state -- all the data you need to keep track of -- can get pretty complicated.
@@ -72,7 +71,8 @@ It's something that React has had for awhile now, but it took a rewrite of the r
 
 However, you can use functional components to get around this issue while we wait for Vue 3.0 to be released. You can read more about that in [Can A Vue Template Have Multiple Root Nodes (Fragments)?](https://vuejsdevelopers.com/2018/09/11/vue-multiple-root-fragments/) by [Anthony Gore](https://twitter.com/@anthonygore).
 
-## 5. Validate your forms the easy way -- using Vuelidate
+<h2 class="new-page">5. Validate your forms the easy way &mdash; using Vuelidate</h2>
+
 ![](vuelidate.png)
 
 At one of my previous jobs, I'm pretty sure my official job description was:
@@ -91,7 +91,8 @@ It's a library that makes it super easy to add custom validation, and does all t
 
 Learn how to setup Vuelidate by reading [Simple Vue.js Form Validation with Vuelidate](https://vuejsdevelopers.com/2018/08/27/vue-js-form-handling-vuelidate/) by [Dobromir Hristov](https://twitter.com/@d_m_hristov).
 
-## 6. Build components that play nicely with each other
+<h2 class="new-page">6. Build components that play nicely with each other</h2>
+
 ![](play_nicely.jpg)
 
 The absolutely _worst_ feeling is realizing that you built your component the wrong way, and now you have refactor it completely.
@@ -126,7 +127,8 @@ Might as well just start off on the right foot and use axios from the beginning 
 
 Learn how to integrate `axios` into your Vue app by reading [Vue.js REST API Consumption with Axios](https://alligator.io/vuejs/rest-api-axios/) from [Joshua Bemenderfer](https://twitter.com/@tribex_).
 
-## 9. Use vue-router to handle client-side routing
+<h2 class="new-page">9. Use vue-router to handle client-side routing</h2>
+
 ![](vue-router.png)
 
 If you're doing client-side routing, hand-rolling your own solution isn't that difficult.
@@ -148,7 +150,8 @@ And once you start dealing with:
 
 Instead, just check out this guide from [Ed Zynda](https://twitter.com/edzynda) on [Getting Started With Vue Router](https://scotch.io/tutorials/getting-started-with-vue-router)
 
-## 10. Create filters to reuse formatting
+<h2 class="new-page">10. Create filters to reuse formatting</h2>
+
 ![](filters.jpg)
 
 Formatting data to display on screen can get annoying.
@@ -161,7 +164,7 @@ They let you easily encapsulate these formatting functions and use them in your 
 
 But don't just take my word for it.
 
-Check out this very detailed article from [Rachid Laasri](https://twitter.com/rashidlaasri), which has tons of examples on how to write your own filters: [How to Create Filters in Vue.js with Examples](https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples)
+<div class="new-page">Check out this very detailed article from <a href="https://twitter.com/rashidlaasri">Rachid Laasri</a>, which has tons of examples on how to write your own filters: <a href="https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples">How to Create Filters in Vue.js with Examples</a></div>
 
 ## 11. Make sure to avoid annoying errors and warnings
 ![Stapler in jello prank](https://media.giphy.com/media/jNmhFR8sdA9G0/giphy.gif)
@@ -398,7 +401,8 @@ I've written [an entire article](/avoid-mutating-prop-directly/) on this subject
 
 The article also touches on how to avoid getting this error when using `v-model`, as there are some specific things that can be confusing there.
 
-## 26. Dynamically add CSS classes
+<h2 class="new-page">26. Dynamically add CSS classes</h2>
+
 ![](https://media.giphy.com/media/12P29BwtrvsbbW/giphy.gif)
 
 Vue incorporates HTML and Javascript together in a really beautiful way, but we can't forget about CSS.
@@ -411,6 +415,8 @@ Vue gives us a lot of options in choosing how to dynamically add and remove CSS 
 
 I wrote an article that covers all of the different ways you can [dynamically add and remove classes in Vue](/dynamically-add-class-name/). We go over array syntax and object syntax, using Javascript expressions to calculate the class, and adding dynamic classes to custom components (you don't need to add a custom `class` prop!). You can even generate your class names on the fly!
 
+<div class="hide-print">
+
 ---
 
 If you enjoyed this article, please share it with others who may enjoy it as well!
@@ -418,3 +424,4 @@ If you enjoyed this article, please share it with others who may enjoy it as wel
 It really helps encourage me to keep writing stuff like this.
 
 **Thanks!**
+</div>

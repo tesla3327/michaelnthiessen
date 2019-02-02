@@ -11,14 +11,15 @@ So what's the difference between props and data?
 
 **`Data` is the private memory of each component where you can store any variables you need. Props are how you pass this data from a parent component down to a child component.**
 
-In this article you'll learn:
+In this chapter you'll learn:
 - What props are, and why **this data only flows down**, not up
 - What the `data` option is used for
 - What **reactivity** is
 - How to avoid **naming collisions** between props and `data`
 - How to use **props and data together** for fun and profit 💰
 
-## What are props?
+<h2 class="new-page">What are props?</h2>
+
 In Vue, [props](https://vuejs.org/v2/guide/components-props.html) (or properties), are the way that we pass data from a parent component down to it's child components.
 
 When we build our applications out of components, we end up building a [data structure called a tree](https://en.wikipedia.org/wiki/Tree_(data_structure)). Similar to a family tree, you have:
@@ -277,7 +278,5 @@ Now all the user data that `ContactInfo` needs will flow down the component tree
 The reason we keep the data in `ProfilePage` and not `ContactInfo` is that other parts of the profile page need access to the user object.
 
 Since **data only flows down**, this means we have to put our data high enough in the component tree so that it can flow down to all of the places it needs to go.
-
-_If you enjoyed this article or have any comments, let me know by replying to [this tweet](https://twitter.com/MichaelThiessen/status/1050425430963052546)!_
 
 

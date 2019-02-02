@@ -104,7 +104,8 @@ computed: {
 
 Now that we know the two main types of functions, how do we use them in the correct way?
 
-## Anonymous Functions
+<h2 class="new-page">Anonymous Functions</h2>
+
 Anonymous functions are great for when you just need to create a quick function and don't need to call it from anywhere else. They're called _anonymous_ because they aren't given a name, and aren't tied to a variable.
 
 Here are some scenarios where you'd use an anonymous function:
@@ -163,7 +164,8 @@ Our filter can access `this.match` because the arrow function uses the same cont
 
 Let's expand further on how you would this to fetch data using `axios` or `fetch`.
 
-## Using the right function when fetching data
+<h2 class="new-page">Using the right function when fetching data</h2>
+
 If you're fetching async data using `fetch` or `axios`, you're also using promises. Promises _love_ anonymous arrow functions, and they also make working with `this` a lot easier.
 
 If you're fetching some data and want to set it on your component, this is how you'd do that properly:

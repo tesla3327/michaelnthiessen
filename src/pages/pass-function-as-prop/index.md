@@ -15,7 +15,7 @@ If you keep reading you'll see what I mean.
 
 ![](https://media.giphy.com/media/rD8R00QOKwfxC/giphy.gif)
 
-In this article I'll show you:
+In this chapter I'll show you:
 - How to pass a function as a prop -- even though you probably shouldn't
 - Why React and Vue are different when it comes to passing methods as props
 - Why events or scoped slots might be better solutions
@@ -47,7 +47,8 @@ Why?
 
 Well, Vue has something better...
 
-## React vs Vue
+<h2 class="new-page">React vs Vue</h2>
+
 If you're coming from React you're used to passing down functions all of the time.
 
 In React you'll pass a function from a parent to a child component, so the child can communicate back up to the parent. Props and data flow down, and function calls flow up.
@@ -108,7 +109,8 @@ It keeps our components more encapsulated and promotes their reusability. This m
 
 But you may be tempted to try and pass functions as props to get around this.
 
-### Getting a value from the parent
+<h3 class="new-page">Getting a value from the parent</h3>
+
 If you want a child component to access a parent's method, it seems obvious to just pass the method straight down as a prop.
 
 Then the child has access to it immediately, and can use it directly.

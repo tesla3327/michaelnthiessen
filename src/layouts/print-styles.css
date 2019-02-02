@@ -1,37 +1,78 @@
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+  }
+
   .header,
   .post__date,
   .bottom-nav,
-  img[src*=".gif"] {
+  img[src*=".gif"],
+  iframe {
     display: none !important;
   }
 
   img,
-  ul,
   blockquote,
   pre,
-  .gatsby-highlight {
-    page-break-inside: avoid !important;
+  strong,
+  .gatsby-highlight,
+  .gatsby-resp-image-wrapper {
+    break-inside: avoid-page !important;
   }
 
-  .gatsby-highlight,
-  .language-text {
-    -webkit-print-color-adjust: exact;
-  }
 
   h2, h3, h4, h5, h6,
   img {
-    page-break-after: avoid;
+    page-break-after: avoid !important;
+  }
+
+  .new-page {
+    margin-top: 0;
+    break-before: page !important;
+  }
+
+  .break-inside * {
+    break-inside: auto !important;
+  }
+
+  .hide-print {
+    display: none;
   }
 
   h1 {
+    counter-increment: page;
+    position: relative;
     text-align: center;
     width: 100%;
     margin-top: 25vh;
     margin-left: 0 !important;
     margin-right: 0;
     padding: 0 !important;
-    page-break-after: always;
+    break-after: page;
+    break-before: page;
+  }
+
+  h1::before,
+  h1::after {
+    content: '';
+    width: 70%;
+    height: 3px;
+    position: absolute;
+    left: calc(15%);
+    background: rgba(0,0,0,0.15);
+  }
+
+  h1::before {
+    top: -30px;
+  }
+
+  h1::after {
+    bottom: -30px;
+  }
+
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
   }
 
 }

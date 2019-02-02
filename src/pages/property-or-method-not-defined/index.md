@@ -52,7 +52,8 @@ Whenever I see this warning I make sure to closely inspect my code and ensure I 
 
 But if there are no typos, the problem lies somewhere else!
 
-## 2. The value is defined on a different component
+<h2 class="new-page">2. The value is defined on a different component</h2>
+
 This is another [common mistake](https://stackoverflow.com/questions/42908525/vue-warn-property-or-method-is-not-defined-on-the-instance-but-referenced-dur) that is easy to make.
 
 Components are scoped, meaning that something defined in one component isn't available in another. You have to use props and events to move things between components.

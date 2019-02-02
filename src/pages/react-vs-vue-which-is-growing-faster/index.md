@@ -183,7 +183,8 @@ Because of this, having a lot of Github stars provides a very strong signal that
 
 For those interested, there is some [interesting discussion](https://opensource.stackexchange.com/questions/5110/github-stars-is-a-very-useful-metric-but-for-what) on Stack Overflow about how useful this metric is for research.
 
-### The Numbers
+<h3 class="new-page">The Numbers</h3>
+
 I got my trend data [here](http://www.timqian.com/star-history/#facebook/react&vuejs/vue), but the tooltips were really finnicky so I couldn't get data on the exact dates I wanted 🤷‍♂️.
 
 For the last metrics I was tracking year over year growth, but I could only grab data 2 years apart. So here I will calculate growth over the last 2 years, and from that get the average year over year growth. It will be slightly less than the actual growth over the last year, but it should still be fine for comparing relative growth between Vue and React.
@@ -224,7 +225,8 @@ Yet another solid win for Vue.
 
 But how long can this streak continue?
 
-## Google trends
+<h2 class="new-page">Google trends</h2>
+
 ![](google-trends.png)
 
 Not very long, it turns out.
@@ -245,7 +247,8 @@ But it doesn't understand Vue as a Javascript framework, so it wouldn't be a val
 
 Perhaps once Vue becomes more popular Google will have enough data to recognize it as a Javascript framework, and we'll be able to make this comparison a lot better.
 
-## Reddit subscribers
+<h2 class="new-page">Reddit subscribers</h2>
+
 ![](./reddit-subscribers.png)
 
 The last metric -- however loose you define that word -- is growth in Reddit subscribers.
@@ -258,7 +261,8 @@ Taking a cursory look at [/r/vuejs](https://www.reddit.com/r/vuejs) and [/r/reac
 
 But what do the numbers say?
 
-### The Numbers
+<h3 class="new-page">The Numbers</h3>
+
 We'll use [reddit metrics](http://redditmetrics.com/r/vuejs#compare=reactjs) to get our data. For some reason it doesn't provide data for Vue beyond January 2018, so we'll have to compare year over year growth between January 2017 and January 2018.
 
 As always, React will go first:

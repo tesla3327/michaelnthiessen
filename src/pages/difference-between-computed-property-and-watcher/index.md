@@ -10,13 +10,11 @@ But I often see people mixing them up -- using one when they should be using the
 
 They have a lot of similarities, so it can be hard knowing which one is best for what you're trying to accomplish.
 
-In this article you'll learn:
+In this chapter you'll learn:
 - What a watcher is, and what a computed prop is
 - Common use cases for both
 - The differences and similarities between them
 - How to know which to use
-
-But first, a gif of a puppy burrito:
 
 ![](https://media.giphy.com/media/FOL5mK0tXUmXe/giphy.gif)
 
@@ -195,7 +193,8 @@ They aren't exactly twins, but they both:
 
 But how do you know **which one to use** in a given situation?
 
-## Which one do you use?
+<h2 class="new-page">Which one do you use?</h2>
+
 Watched properties can often be confused with computed properties, because they operate in a similar way. 
 
 It's even trickier to know when to use which one.

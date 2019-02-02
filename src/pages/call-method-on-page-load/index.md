@@ -12,7 +12,7 @@ How do we do this in Vue?
 
 **You'll want to use the `mounted` lifecycle hook so that you can run code as soon as your component is mounted to the DOM. From this lifecycle hook you can fetch data, manipulate the DOM, or do anything else you might need in order to initialize your component.**
 
-This article will explain a few things:
+This chapter will explain a few things:
 - What lifecycle hooks are
 - How to use lifecycle hooks
 - Why you should prefer using the `mounted` hook over the `created` hook
@@ -21,7 +21,8 @@ In order to call a function as soon as our Vue component has loaded, we'll first
 
 ![Dog skating GIF](https://media.giphy.com/media/eeUJaTwsHh3tswkaYm/giphy.gif)
 
-## Lifecycle Hooks
+<h2 class="new-page">Lifecycle Hooks</h2>
+
 All Vue components have a series of stages -- or _lifecycles_ -- that they go through.
 
 As your app is run, your component will be:
@@ -124,7 +125,8 @@ export default {
 
 The advantage of using `created` instead of `mounted` is that `created` will be called a little sooner. This means you'll get your data just a tiny bit faster.
 
-## Mounting the Component
+<h2 class="new-page">Mounting the Component</h2>
+
 Earlier I said that the `created` hook doesn't have access to the DOM.
 
 Let me explain why that is.

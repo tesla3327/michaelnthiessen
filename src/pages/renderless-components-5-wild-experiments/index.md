@@ -34,7 +34,8 @@ Using it is as simple as this:
 
 Anytime the `window` is clicked, it will call our method `handleClick`. Easy!
 
-### Boilerplate is no fun
+<h3 class="new-page">Boilerplate is no fun</h3>
+
 Normally, if you wanted to listen to an event on the `window` you would need to do these things in your component:
 * Bind any methods to make sure they have access to `this` (our instance of the Vue component)
 * Add event listeners after the component mounts
@@ -147,6 +148,9 @@ That's it! We've built ourselves an awesome, declarative, renderless, event comp
 
 ### Finished Component
 Here is the full source for the component:
+
+<div class="break-inside">
+
 ```js
 export default {  
   props: {
@@ -191,10 +195,7 @@ export default {
 }
 ```
 
-I also built a CodeSandbox if you wanted to play around with a live example.
-
-If you click anywhere in the sandbox below it will display an alert. If you resize the window it will log it to the console in the sandbox.
-<iframe src="https://codesandbox.io/embed/71qj6j0r31?hidenavigation=1&module=%2Fsrc%2FApp.vue" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</div>
 
 ## State Component
 We often use local state to keep track of toggled UI elements, form state, and other things.
@@ -231,7 +232,8 @@ Isn't composing behaviour fun?
 
 Let's get started building this `State` component then!
 
-### Using scoped slots in a render function
+<h3 class="new-page">Using scoped slots in a render function</h3>
+
 This component is less code than our previous `Event` example, but differs in one main way. This component *will* have children, so we need to render them somehow.
 
 Our `render` method will look like this:
@@ -286,6 +288,9 @@ This means we only need to specify the properties we want to update when we call
 
 ### The final component
 Putting everything together we get our renderless state component:
+
+<div class="break-inside">
+
 ```html
 <script>
 export default {  
@@ -324,9 +329,7 @@ export default {
 </script>
 ```
 
-You can also play around with this CodeSandbox of a basic counter app.
-
-<iframe src="https://codesandbox.io/embed/xv358jwoz4?hidenavigation=1" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+</div>
 
 ## Declarative Lifecycle Components
 So far the components we've looked at have been fairly normal -- things will start to get weirder soon.
@@ -460,7 +463,8 @@ Here, however, we don't care at all what value is being passed in.
 
 Whatever we get passed we'll log out. By **leaving the prop definition empty** we can specify that we're expecting a `value` prop, without having to specify `type`, `default`, or any other field.
 
-### The final logging component
+<h3 class="new-page">The final logging component</h3>
+
 Here is the final source:
 ```html
 <script>
@@ -493,10 +497,8 @@ export default {
 </script>
 ```
 
-Here is the sandbox:
-<iframe src="https://codesandbox.io/embed/k0j2ryr84r?autoresize=1&hidenavigation=1" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<h2 class="new-page">Interval Component</h2>
 
-## Interval Component
 Let's take this all one step further and build a component that let's us **define intervals declaratively**.
 
 We'll wrap up all of the `setInterval` boiler plate into a nice component, so all we have to do is:
@@ -516,7 +518,8 @@ You may have noticed we have to add in the extra `slot-scope="{}"` that isn't re
 
 I'm working on some ways around this, as well as a library that will make building all types of renderless components much easier -- but first let's see how it's built!
 
-### Forcing a scoped slot to update
+<h3 class="new-page">Forcing a scoped slot to update</h3>
+
 This whole component revolves around being able to **force a child to update** whenever we want it to. We could use [key-changing](/force-re-render) here, but since we want to use a scoped slot we'll do something a little different.
 
 A quick little review of Vue's reactivity.
@@ -620,15 +623,9 @@ export default {
 </script>
 ```
 
-Like always, the sandbox:
-<iframe src="https://codesandbox.io/embed/yv1kmxowmj?autoresize=1&hidenavigation=1" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-
 ## We've only scratched the surface
 Now you've seen some of the cool things that renderless components can do.
 
 **Where do we go from here?**
 
 We have only just begun to start figuring out what is possible with renderless components. I believe there are huge wins we can unlock with them, because they allow us to write components in a whole new way.
-
-I'll be continuing to play around with them and learn as much as I can. I'm also working on a library to make building renderless components much easier.
-

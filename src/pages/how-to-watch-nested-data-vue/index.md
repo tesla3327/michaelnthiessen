@@ -14,11 +14,11 @@ Here's how you solve this.
 
 **You need to set `deep` to true when watching an array or object so that Vue knows that it should watch the nested data for changes.**
 
-I'll go into more detail on what this looks like in this article, plus some other useful things to know when using `watch` in Vue.
+I'll go into more detail on what this looks like in this chapter, plus some other useful things to know when using `watch` in Vue.
 
 You can also check out the [Vue docs](https://vuejs.org/v2/api/#watch) on using watchers.
 
-## What we'll cover in this article
+## What we'll cover in this chapter
 
 First we'll do a quick refresher on **what a watcher actually is**.
 
@@ -255,8 +255,6 @@ methods: {
 ```
 
 This makes things a little cleaner if we are watching multiple props to do the same side-effect.
-
-*If you enjoyed this article or have any comments, let me know by replying to [this tweet](https://twitter.com/MichaelThiessen/status/1052952314699485184)!*
 
 
 

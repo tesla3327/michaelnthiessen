@@ -22,7 +22,7 @@ We have to implement most of this ourselves.
 
 But don't worry, it's not _that_ much work.
 
-In this short article you'll learn:
+In this short chapter you'll learn:
 - How to implement a **hover effect** in Vue
 - How to **show an element** on mouseover
 - How to dynamically **update classes** with a mouseover

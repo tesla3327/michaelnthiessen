@@ -3,13 +3,13 @@ title: "Vue Error: Avoid Mutating a Prop Directly"
 date: 2018-11-29
 description: "It's a confusing error: \"Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders\". I'll show you a simple pattern you can use to fix this error - and never see it again."
 ---
-You probably found this article because you've gotten this confusing error:
+So you've gotten this confusing error:
 
-![](error.png)
+> Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders
 
 I'll show you a simple pattern you can use to fix this error -- and never see it again.
 
-By the end of this article you'll learn:
+By the end of this chapter you'll learn:
 - A **simple pattern for fixing this issue**
 - What this error means, and what causes it
 - Why **mutating props is an anti-pattern**
@@ -17,7 +17,8 @@ By the end of this article you'll learn:
 
 ![Teenage Mutant Ninja Turtles](https://media.giphy.com/media/9JtCCeSviDLFNhYir6/giphy.gif)
 
-## How is this caused?
+<h2 class="new-page">What causes this?</h2>
+
 Here is the error message in full:
 
 > Error message: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
@@ -30,7 +31,7 @@ It applies equally to objects, arrays, and strings and numbers -- and any other 
 
 Changing the value in a child component won't change it in the parent component, but it's a symptom of not having thought out your component design clearly enough.
 
-We'll cover how to fix this using a simple pattern in the last part of the article, so hold on until we get there!
+We'll cover how to fix this using a simple pattern in the last part of the chapter, so hold on until we get there!
 
 Here's what it might look like to accidentally mutate a prop:
 ```js
@@ -109,7 +110,8 @@ But they are, and thankfully Vue warns us.
 
 As you can see, it's an easy mistake to make, but why is it considered bad practice in the first place?
 
-## Mutating props in Vue is an anti-pattern
+<h2 class="new-page">Mutating props in Vue is an anti-pattern</h2>
+
 Yes, in Vue, mutating props like this is considered to be an _anti-pattern_.
 
 Meaning -- please don't do it, or you'll cause a lot of headaches for yourself.
@@ -316,6 +318,6 @@ In my opinion, computed props are one of the most useful features of Vue. You ca
 
 ![](https://media.giphy.com/media/7K3p2z8Hh9QOI/giphy.gif)
 
-If this still didn't fix your problem, or you have questions about this article, please reach out to me on Twitter.
+If this still didn't fix your problem, or you have questions about this chapter, please reach out to me on Twitter.
 
 I'm always available to help!
