@@ -9,6 +9,7 @@ import { rhythm, scale } from '../utils/typography'
 
 // import './prism-atom-dark.css';
 import './prism-onedark.css';
+import './style.css';
 
 class BlogPostTemplate extends React.Component {
   render() {

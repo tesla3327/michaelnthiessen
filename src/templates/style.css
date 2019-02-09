@@ -1,0 +1,54 @@
+.cta {
+  display: flex;
+  align-items: center;
+}
+
+.cta img {
+  position: relative;
+  height: 300px;
+  transition: all 0.15s ease-in-out;
+  top: 0;
+}
+
+.mc-field-group {
+  display: block;
+  margin: 25px auto;
+}
+
+#mc-embedded-subscribe-form {
+  margin: 0;
+  padding: 0;
+}
+
+#mce-EMAIL {
+  border: 1px solid grey;
+  width: 100%;
+}
+
+.button.subscribe {
+  display: block;
+  border-radius: 4px;
+  border: none;
+  background: #0056b9;
+  padding: 3px 50px;
+  width: 100%;
+  margin: 15px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.button.subscribe:hover {
+  cursor: pointer;
+}
+
+.cta:hover img {
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  top: -7px;
+}
+
+@media (max-width: 700px) {
+  .cta {
+    flex-direction: column;
+  }
+}

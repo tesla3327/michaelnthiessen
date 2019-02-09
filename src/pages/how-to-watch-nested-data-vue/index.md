@@ -28,7 +28,57 @@ Thirdly, we'll dive into **how you can watch nested data in arrays and objects**
 
 We'll also go through what you can do with `immediate` and `handler` fields on your watchers. This will take your watcher skills to **the next level**!
 
-But first we have to make sure we have a good foundation.
+But first I have something really awesome to share with you...
+
+## Giving back to my 13,000+ monthly readers
+Every day I'm astonished that so many of you are reading what I put on here. It's truly humbling, and you are the reason I am so motivated to keep writing.
+
+So I wanted to thank you!
+
+I have written a **144 page book** on solving some of the most common (and frustrating) problems that you'll encounter when writing Vue apps.
+
+It covers everything from handling reactivity problems to understanding confusing errors.
+
+Plus, you'll get to see how to implement some common behaviours (the right way), like changing classes dynamically.
+
+The best part?
+
+Even though I could charge money for this book, I'm giving it away to you for free!
+
+<div class="cta">
+  <img src="/front-cover.png" />
+  <form
+    action="https://michaelnthiessen.us7.list-manage.com/subscribe/post?u=aac07b28d06210ba964471dcf&amp;id=a98572f937"
+    method="post"
+    id="mc-embedded-subscribe-form"
+    name="mc-embedded-subscribe-form"
+    class="validate"
+    target="_blank"
+    noValidate
+  >
+    <div id="mc_embed_signup_scroll">
+      <div class="mc-field-group">
+        <label htmlFor="mce-EMAIL">Email Address </label>
+        <input
+          type="email"
+          name="EMAIL"
+          class="required email"
+          id="mce-EMAIL"
+        />
+      </div>
+      <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response"></div>
+        <div class="response" id="mce-success-response"></div>
+      </div>
+      <div aria-hidden="true" hidden>
+        <input type="text" name="b_aac07b28d06210ba964471dcf_a98572f937" tabIndex="-1" value=""/>
+      </div>
+      <div className="clear">
+        <input type="submit" value="Get my FREE book now!" name="subscribe" id="mc-embedded-subscribe" class="button subscribe" />
+      </div>
+    </div>
+  </form>
+</div>
 
 ## What is a watch method?
 In Vue we can [watch for when a property changes](https://vuejs.org/v2/api/#watch), and then do something in response to that change.
