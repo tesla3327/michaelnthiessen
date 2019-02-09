@@ -62,7 +62,7 @@ Even though I could charge money for this book, I'm giving it away to you for fr
         <input type="text" name="b_aac07b28d06210ba964471dcf_a98572f937" tabIndex="-1" value=""/>
       </div>
       <div className="clear">
-        <input type="submit" value="Get my FREE book now!" name="subscribe" id="mc-embedded-subscribe" class="button subscribe" />
+        <input type="submit" value="Download my FREE book now!" name="subscribe" id="mc-embedded-subscribe" class="button subscribe" />
       </div>
     </div>
   </form>
